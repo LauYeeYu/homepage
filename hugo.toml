@@ -1,5 +1,23 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Yiyu Liu (刘 祎禹)'
 
 theme = "soho"
+copyright = "Yiyu Liu"
+license = "CC BY-SA 4.0"
+licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+
+  [[params.socialIcons]]
+  icon = "fa-github"
+  title = "GitHub"
+  url = "https://github.com/LauYeeYu"
+
+  [[params.socialIcons]]
+  icon = "fa-twitter"
+  title = "Twitter"
+  url = "https://twitter.com/LauYeeYu"
+
+  [[params.socialIcons]]
+  icon = "fa-orcid"
+  title = "ORCID"
+  url = "https://orcid.org/0009-0000-6852-1978"
