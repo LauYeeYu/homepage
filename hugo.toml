@@ -21,3 +21,8 @@ licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
   icon = "fa-orcid"
   title = "ORCID"
   url = "https://orcid.org/0009-0000-6852-1978"
+
+  [[params.socialIcons]]
+  icon = "fa fa-envelope"
+  title = "Email"
+  url = "mailto:liu_yiyu@sjtu.edu.cn"
