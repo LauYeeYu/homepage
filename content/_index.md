@@ -1,13 +1,21 @@
 ## Biography
 
-I am an undergraduate at [ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity][sjtu]. Currently, I am fortunate to work with Prof. Quan Chen at [Emerging Parallel Computing Center (EPCC)](epcc), and I will work with Prof. [Baris Kasikci][baris] as research intern in the Paul G. Allen School of Computer Science & Engineering at the University of Washington from July to December, 2024. I am expected to graduate in June 2025.
+I am Yiyu Liu (“Liu” is my family name, you may pronounce my family name as
+“Leo” and my given name as “Yee Yu”), an undergraduate at
+[ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity][sjtu]. Currently,
+I am fortunate to work with Prof. Quan Chen at
+[Emerging Parallel Computing Center (EPCC)][epcc], and I will work with Prof.
+[Baris Kasikci][baris] as research intern in the Paul G. Allen School of
+Computer Science & Engineering at the University of Washington from July to
+December, 2024. I am expected to graduate in June 2025.
 
 [acm-class]: https://acm.sjtu.edu.cn/
 [sjtu]: https://sjtu.edu.cn/
 [epcc]: http://epcc.sjtu.edu.cn/
 [baris]: https://homes.cs.washington.edu/~baris/
 
-I am interested in cloud computing, high performance computing, operating system, and hardware/software co-design.
+I am interested in cloud computing, high performance computing, operating system,
+and hardware/software co-design.
 
 I'm looking for PhD position.
 
