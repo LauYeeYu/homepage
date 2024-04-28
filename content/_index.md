@@ -21,6 +21,10 @@ I'm looking for a PhD position.
 
 ## Publications
 
+[Google Scholar Page][google-scholar-page]
+
+[google-scholar-page]: https://scholar.google.com/citations?user=HMG29HMAAAAJ
+
 ### FaaSMem: Improving Memory Efficiency of Serverless Computing with Memory Pool Architecture
 
 Chuhao Xu, **Yiyu Liu**, Zijun Li, Quan Chen*, Han Zhao, Deze Zeng, Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
