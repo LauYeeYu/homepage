@@ -2,9 +2,6 @@ baseURL = 'https://lau.yeeyu.org/'
 languageCode = 'en-us'
 title = 'Yiyu Liu (刘 祎禹)'
 
-[params]
-author = "Yiyu Liu"
-
 theme = "soho"
 copyright = "Yiyu Liu"
 license = "CC BY-SA 4.0"
