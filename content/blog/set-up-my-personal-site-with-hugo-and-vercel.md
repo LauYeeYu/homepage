@@ -33,7 +33,7 @@ git init
 ### Add a Theme
 
 A lot of [themes][hugo-themes] is provided by the Hugo community. You can
-choose one that you like and add it to your site. I use a [soho theme][soho]
+choose one that you like and add it to your site. I use the [soho theme][soho]
 for my site.
 
 [hugo-themes]: https://themes.gohugo.io/
@@ -71,12 +71,12 @@ After that, add the modification of the submodule to the main repository.
 Your may use the following command to add the modification of the submodule:
 
 ```bash
-# Commit the changes of the submodule to the theme repository
+# Commit the changes of the submodule to the theme repo
 cd <dir>/themes/<theme-name>
 git add static/
 git commit
 git push
-# Commit the modification of the submodule to the main repository
+# Commit the modification to the main repo
 cd ..
 git add themes/<theme-name>
 git commit
@@ -141,17 +141,32 @@ After you have created a Vercel account, you can add a new project with the
 vercel website. You should add your repository to the project (It is not
 recommended to give the permission of all repositories, because vercel will
 then have write permission on all of your repositories). Select the
-repository of your site, and choose hugo as the framework.
+repository of your site, and choose hugo as the framework. This should be
+enough to deploy your site.
 
-This should be enough to deploy your site. However, when I deployed my site,
-some problems occurred. The main problem is that hugo support is not that
-good. Therefore, I solved the problem by specifying the hugo version in the
-vercel configuration file (`vercel.json` in the root directory of the site).
-See [my vercel config][my-vercel-config] for more details.
+Then you should check the result of the deployment. If there is any error,
+you can check the log of the deployment to find the error. For me, when I
+deployed my site, some problems occurred.
 
+If there is no error, you can visit the site with the url provided by vercel.
+
+#### Problem I Encountered
+
+The main problem is that hugo support is not that good. With default settings,
+I met with the error of `hugo not found`. This is because vercel's `Node 20.x`
+image does not have hugo installed. In
+[this discussion][discussion-default-hugo-20], it is suggested that I should
+use the `Node 18.x` image. However, with the `Node 18.x` image, the hugo
+version is too old to support my site. Fortunately, vercel allows you to
+specify the hugo version. Hence, by specifying the hugo version in the vercel
+configuration file (`vercel.json` in the root directory of the site), I
+finally fix the problem. You may see [my vercel config][my-vercel-config]
+for more details.
+
+[discussion-default-hugo-20]: https://github.com/orgs/vercel/discussions/6472
 [my-vercel-config]: https://github.com/LauYeeYu/homepage/blob/master/vercel.json
 
-Then you can check the site with the url provided by vercel.
+### Add a Domain
 
 If you have a domain name like me, you can add the domain name to the vercel in
 domains section of the project settings. Then add a CNAME to your domain
