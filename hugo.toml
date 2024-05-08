@@ -1,6 +1,6 @@
 baseURL = 'https://lau.yeeyu.org/'
 languageCode = 'en-us'
-title = 'Yiyu Liu (刘 祎禹)'
+title = 'Yiyu Liu (刘祎禹)'
 
 theme = "soho"
 copyright = "Yiyu Liu"
