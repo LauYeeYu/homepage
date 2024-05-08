@@ -1,5 +1,5 @@
 +++
-title = 'Set up Personal Site with Hugo and Vercel'
+title = 'Set up my Personal Site with Hugo and Vercel'
 date = 2024-05-08T19:00:00+08:00
 draft = false
 +++
