@@ -2,6 +2,7 @@
 title = 'Set up my Personal Site with Hugo and Vercel'
 date = 2024-05-08T19:00:00+08:00
 draft = false
+tags = ['hugo', 'vercel', 'web']
 +++
 
 Recently, I create my personal site with [Hugo][hugo], and deploy it with [Vercel][vercel]. Here are the steps I took to set up my personal site.
