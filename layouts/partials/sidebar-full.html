@@ -1,11 +1,22 @@
-<aside class="sidebar sidebar-wrap-padding">
-  <div id="sidebar-wrap-top">
-    <div id="sidebar-wrap-toggle">
-      <i class="fa fa-solid fa-caret-down sidebar-wrap-toggle-icon" aria-hidden="true"></i>
-    </div>
-  </div>
-  <div id="sidebar-container" class="container">
+<aside class="sidebar sidebar-full-padding">
+  <div class="container">
     <div class="sidebar-about">
+      {{ with .Site.Params.gravatar }}
+      <div class="author-image">
+        <a href="{{ $.Site.BaseURL }}">
+          <img src="https://www.gravatar.com/avatar/{{md5 .}}?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      {{ else }}
+        {{ with .Site.Params.profilePicture }}
+        <div class="author-image">
+          <a href="{{ $.Site.BaseURL }}">
+            <img src="{{ . | relURL }}" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        {{ end }}
+      {{ end }}
+
       <h1>Yiyu LIU</h1>
       <h1 style="font-size: 1.75rem; opacity: 85%;">刘祎禹</h1>
 
@@ -14,7 +25,7 @@
       {{end}}
     </div>
 
-    <div><nav>
+    <nav>
       <ul class="sidebar-nav">
         <li>
           <a href="{{ .Site.BaseURL }}">Home</a>
@@ -31,14 +42,14 @@
         </li>
         {{- end }}
       </ul>
-    </nav></div>
+    </nav>
 
-    <div><section class="social-icons">
+    <section class="social-icons">
       {{ range $item := .Site.Params.socialIcons }}
       <a href="{{ $item.url }}" rel="me" title="{{ $item.title }}" target="_blank">
         <i class="fab {{ $item.icon }}" aria-hidden="true"></i>
       </a>
       {{ end }}
     </section>
-  </div></div>
+  </div>
 </aside>
