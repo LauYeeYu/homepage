@@ -17,7 +17,7 @@ December, 2024. I am expected to graduate in June 2025.
 I am interested in cloud computing, high performance computing, operating system,
 and hardware/software co-design.
 
-I'm looking for a PhD position.
+I'm looking for a PhD position for Fall 2025 PhD programs.
 
 ## Publications
 
