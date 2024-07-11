@@ -107,6 +107,10 @@ the configuration file.
 Remember to [test your site](#test-your-site) after changing the
 configuration file.
 
+Note: If you want to use my configuration file, you can should change the
+`googleAnalytics` field to your own google analytics id or remove that
+line if you don't want to use it at this moment.
+
 ### Add some other Content
 
 For example, you can add a new post with the following command:
