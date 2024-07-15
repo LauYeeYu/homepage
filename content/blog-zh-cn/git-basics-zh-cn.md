@@ -9,6 +9,8 @@ tags = ["git-zh-cn", "git", "tutorial", "tutorial-zh-cn"]
 
 <!--more-->
 
+*本文章有其他语言的版本：[English（英文）](/blog/git-basics-en)及[繁體中文（繁体中文）](/blog-zh-hk/git-basics-zh-hk)。如果你更熟悉这些语言，建议阅读这些语言的版本。*
+
 ## 版本问题
 
 假设你现在为一个项目组工作，你的上级让你做一个项目的报告。写完报告后，你将报告命名成
