@@ -205,10 +205,26 @@ gitGraph
   commit
   commit
   checkout main
-  branch feature-2 
-The graph below shows the commits and their commit messages. Usually, the
-commit message should be short and clear, describing briefly about the
-changes in the commit. **repo** for short. Everything in Git is from the view
+  branch feature-2
+  commit
+  checkout main
+  commit
+```
+
+## How Git Implements these Ideas?
+
+After understanding the core concepts in version control systems, let's
+see how Git implements these ideas.
+
+*P.S.: If you forget the details of the concepts, don't worry about it.
+We will explain the details when we meet them. You just need to remember
+the core concepts (like commit, branch, remote, etc.).*
+
+### Overview of Git Structure
+
+Git is a distributed version control system. Therefore, every client is
+a standalone database. The directory Git tracks is called a **repository**,
+**repo** for short. Everything in Git is from the view
 of the client that you are working on. The graph below shows the structure
 of the Git from the view of one client.
 
