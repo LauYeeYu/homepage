@@ -12,7 +12,7 @@ Git was designed.
 
 *This article has other versions in different languages:
 [简体中文 (Simplified Chinese)](/blog-zh-cn/git-basics-zh-cn),
-[繁體中文 (Tradtional Chinese)](/blog-zh-hk/git-basics-zh-hk). If you are
+[繁體中文 (Traditional Chinese)](/blog-zh-hk/git-basics-zh-hk). If you are
 a native speaker of these languages, it is recommended to read
 these versions.*
 
