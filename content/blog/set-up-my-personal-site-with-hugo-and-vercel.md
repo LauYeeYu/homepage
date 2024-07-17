@@ -33,7 +33,7 @@ git init
 
 ### Add a Theme
 
-A lot of [themes][hugo-themes] is provided by the Hugo community. You can
+A lot of [themes][hugo-themes] are provided by the Hugo community. You can
 choose one that you like and add it to your site. I use the [soho theme][soho]
 for my site.
 
