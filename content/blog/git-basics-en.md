@@ -250,7 +250,7 @@ repository.
 
 Different from Google docs, checkpoints in Git are added manually. This
 is because intermediate state is okay for docs but not acceptable for code.
-Had the checkpoints added automatically, then we might not be able to
+Should the checkpoints added automatically, then we might not be able to
 compile the code at some checkpoints.
 
 Hence, the checkpoints in Git are called commits, which are added manually.
@@ -399,12 +399,9 @@ graph TD
   B1 --fetch changes--> A1
 ```
 
-Please note that the local-remote relation is **relative**. In most cases,
-the remote repository is a server. But sometimes, the remote repository
-might also be a local repository of another user. For example, Alice and
-Bob are working on the same project. Both of them have set the other's
-repository as the remote repository. In this case, Alice's remote
-repository is Bob's local repository, and vice versa.
+Please note that the local-remote relation is **relative**. The remote
+repository can be on a remote server, on other's computer, or even at
+another directory on your computer.
 
 Every repository can have multiple remote repositories. These remote
 repositories should at least share the same first commit (the initial commit)
