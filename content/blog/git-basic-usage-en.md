@@ -153,8 +153,8 @@ In this section, we will introduce the minimal Git usage that every Git user
 should bear in mind in order to use Git effectively and comfortably.
 
 Most new Git users may feel confused about the Git workflow. Here, we will
-introduce the basic usage with an example of a simple workflow and also
-provides you with a drill to test whether you have understand the basic usage.
+introduce the basic usage in details with examples and also provides you
+with a drill to test whether you have understand the basic usage.
 
 ### Create a Repository
 
@@ -183,7 +183,14 @@ URL of the repository you want to clone)
 git clone <repository-url>
 ```
 
-### Add to Staging Area
+> For example, to clone the Git repository, you can run the following command
+> to clone the GitHub's gitignore repository:
+>
+> ```bash
+> git clone git@github.com:github/gitignore.git
+> ```
+
+### Add Files to Staging Area
 
 Commits are fundamental in Git. Before you make a commit, you need to add
 the changes to the staging area (the area serves as a buffer for making
@@ -197,6 +204,13 @@ To add changes to the staging area, you can run:
 ```bash
 git add <file>
 ```
+
+> For example, if you want to add the changes in the `README.md` file to the
+> staging area, you can run:
+>
+> ```bash
+> git add README.md
+> ```
 
 If you want to add all changes in the current directory and its subdirectory
 to the staging area, you can run:
@@ -220,7 +234,8 @@ have run `git add .` before.
 
 The status command shows a lot of information and hints for you. If you
 are confused about what to do next, you can always try `git status` to
-get some hints and also know about your Git repo's status.
+get some hints and also know about your Git repo's status. Thus, the
+`git status` is probably the most frequently used command in Git.
 
 ### Make a Commit
 
@@ -244,12 +259,25 @@ with your commit message!)
 git commit -m "Your commit message"
 ```
 
+> For example, if you want to make a commit with the message `docs: add
+> README.md`, you can run:
+>
+> ```bash
+> git commit -m "docs: add README.md"
+> ```
+
 Committed files can be retrieved easily in most situations; however,
 uncommitted changes may be lost if you accidentally delete them. Hence,
 it is **strongly recommended** to **commit often**. A good practice is to
 commit at least every day if you have made changes to the repo.
 Fine-grained commits are generally better than large commits in a lot of
 aspects (e.g., cherry-picking, reverting, understanding the changes, etc.).
+
+A lot of people uses the [Conventional Commits][conventional-commits] style
+for their commit messages. This style makes it easier and clearer to
+understand the changes in the commit.
+
+[conventional-commits]: https://www.conventionalcommits.org/
 
 ### Use Git Subcommands anywhere in the Git Repository
 
@@ -269,6 +297,13 @@ git remote add origin <repository-url>
 This command will add a remote repository with the name `origin` and the
 URL `<repository-url>`. The `origin` is the default name for the remote
 repository. You can use any name you like for the remote repository.
+
+> For example, if you want to add a remote repository with the URL
+> `git@github.com:github/gitignore.git`, you can run:
+>
+> ```bash
+> git remote add origin git@github.com:github/gitignore.git
+> ```
 
 For the first push, you will see a error message that tells you to set the
 upstream branch. You can follow the instructions in the error message to
@@ -324,8 +359,14 @@ you can specify the remote repository by running:
 git fetch <remote>
 ```
 
+> For example, if the remote repository name is called `source`, you can run:
+>
+> ```bash
+> git fetch source
+> ```
+
 After fetching the changes, you can merge the changes to your local branch
-with the merging stragegy you like. We will introduce the merging strategy
+with the merging strategy you like. We will introduce the merging strategy
 in the next article.
 
 Fetching changes will not change your local branch (except the remote-tracking
@@ -416,6 +457,12 @@ git branch <branch-name>
 
 The command above will create a new branch with the name `<branch-name>`.
 
+> For example, if you want to create a new branch named `dev`, you can run:
+>
+> ```bash
+> git branch dev
+> ```
+
 If `git branch` command is not supported in your Git version, you can run:
 
 ```bash
@@ -425,6 +472,13 @@ git checkout -b <branch-name>
 This will create a new branch with the name `<branch-name>` and switch to
 the new branch.
 
+> For example, if you want to create a new branch named `dev` and switch to
+> the new branch, you can run:
+>
+> ```bash
+> git checkout -b dev
+> ```
+
 ### Switch to other Branches
 
 To switch to another branch, you can run:
@@ -433,11 +487,23 @@ To switch to another branch, you can run:
 git switch <branch-name>
 ```
 
+> For example, if you want to switch to the `dev` branch, you can run:
+>
+> ```bash
+> git switch dev
+> ```
+
 If `git switch` command is not supported in your Git version, you can run:
 
 ```bash
 git checkout <branch-name>
 ```
+
+> For example, if you want to switch to the `dev` branch, you can run:
+>
+> ```bash
+> git checkout dev
+> ```
 
 ### Tags
 
@@ -446,6 +512,13 @@ To mark a commit with a tag, you can run:
 ```bash
 git tag <tag-name>
 ```
+
+> For example, if you want to mark the latest commit with the tag `v1.0.0`,
+> you can run:
+>
+> ```bash
+> git tag v1.0.0
+> ```
 
 ## Recap
 
