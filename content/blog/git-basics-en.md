@@ -477,5 +477,5 @@ usage of Git.
 
 You may use this article for any purpose as long as the original author
 and link (<https://lau.yeeyu.org/blog/git-basics-en>) are clearly noted at
-the first place you use this article. This copyright notice overrides the
+the place you use this article. This copyright notice overrides the
 footnote of the website.
