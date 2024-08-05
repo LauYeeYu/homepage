@@ -1,7 +1,7 @@
 +++
 title = 'Git Basic Usage'
 date = 2024-07-28T12:00:00-07:00
-draft = true
+draft = false
 +++
 
 In the [previous article](/blog/git-basics-en/), we have discussed about the
@@ -9,6 +9,12 @@ general concept of version control system and the design of Git. In this
 article, we will introduce the basic usage of Git.
 
 <!--more-->
+
+*This article has other versions in different languages:
+[简体中文 (Simplified Chinese)](/blog-zh-cn/git-basic-usage-zh-cn),
+[繁體中文 (Traditional Chinese)](/blog-zh-hk/git-basic-usage-zh-hk). If you are
+a native speaker of these languages, it is recommended to read
+these versions.*
 
 Since Git has too many features for learners, we will only cover the most
 basic ones that every Git user should always bear in mind. For the advanced
@@ -199,10 +205,11 @@ is the staging area, you can read the
 [workspace and staging section](/blog/git-basics-en/#workspace-and-staging)
 in the previous article to have a deeper understanding of it.
 
-To add changes to the staging area, you can run:
+To add changes to the staging area, you can run: (you can add multiple files
+at a time)
 
 ```bash
-git add <file>
+git add <file>...
 ```
 
 > For example, if you want to add the changes in the `README.md` file to the
@@ -416,6 +423,7 @@ means the text after it in the same line is a comment)
 *.S
 
 # Some of the asm files cannot be ignored
+# Use ! to negate the ignore rule
 !not-generated.S
 
 # ignore the build directory
@@ -432,9 +440,9 @@ in the terminal).
 [gitignore-doc]: https://git-scm.com/docs/gitignore
 
 GitHub provides several templates for the `.gitignore` file. You can use
-these templates (rename these files to `.gitignore`). You might probably
-merge several templates to create a `.gitignore` file that fits your
-project. The templates can be found at the
+these templates (rename these files to `.gitignore`). You can merge
+several templates to create a `.gitignore` file that fits your project.
+The templates can be found at the
 [GitHub gitignore repository][github-gitignore].
 
 [github-gitignore]: https://github.com/github/gitignore/
@@ -508,7 +516,7 @@ git checkout <branch-name>
 
 ### Tags
 
-To mark a commit with a tag, you can run:
+To mark the current commit with a tag, you can run:
 
 ```bash
 git tag <tag-name>
@@ -691,5 +699,5 @@ next post, we will introduce commands about merging.
 
 You may use this article for any purpose as long as the original author
 and link (<https://lau.yeeyu.org/blog/git-basic-usage-en>) are clearly noted
-at the first place you use this article. This copyright notice overrides the
+at the place you use this article. This copyright notice overrides the
 footnote of the website.

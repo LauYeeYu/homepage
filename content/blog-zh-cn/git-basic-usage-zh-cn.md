@@ -1,13 +1,15 @@
 +++
 title = 'Git 基础用法'
 date = 2024-07-28T12:00:00-07:00
-draft = true
+draft = false
 +++
 
 在[上一篇文章](/blog-zh-cn/git-basics-zh-cn/)中，我们讨论了版本控制系统的通用概念和
 Git 的设计。在本文中，我们将介绍 Git 的基本用法。
 
 <!--more-->
+
+*本文章有其他语言的版本：[English（英文）](/blog/git-basic-usage-en)及[繁體中文（繁体中文）](/blog-zh-hk/git-basic-usage-zh-hk)。如果你更熟悉这些语言，建议阅读这些语言的版本。*
 
 由于 Git 的功能过于丰富，因此我们只会在本文中介绍每个 Git
 用户都应该牢记的基础功能。我们会在之后的文章中介绍高级用法。
@@ -74,7 +76,7 @@ git config --global user.email "someone@example.org"
 ssh-keygen -t ed25519 -C "someone@example.org"
 ```
 
-> 注意：如果你使用的系统不支持 Ed25519 算法，你可以使用 RSA 算法执行：（同样，请将
+> 注意：如果你的系统不支持 Ed25519 算法，你可以使用 RSA 算法执行：（同样，请将
 > `someone@example.org` 替换为你的邮箱地址！）
 >
 > ```bash
@@ -83,7 +85,7 @@ ssh-keygen -t ed25519 -C "someone@example.org"
 
 执行上述命令后，它会询问你密钥对的保存位置。请**直接按下回车**，使用默认路径，不要指定保存密钥对的路径；否则，后续使用密钥对会非常不方便。
 
-接着，它会询问你是否要设置一个密码。你可以设置一个密码，也可以留空。你可以之后随时更改密码。
+接着，它会询问你是否要设置一个密码。你可以设置一个密码，也可以留空。你之后可以随时更改密码。
 
 #### 将 SSH 密钥添加到 Git 托管平台
 
@@ -156,7 +158,7 @@ git clone <repository-url>
 
 提交是 Git 的基础操作。在你提交之前，你需要将更改添加到暂存区（暂存区是一个缓冲区，用于更干净、更细粒度地提交）。如果你不知道或忘记了什么是暂存区，你可以阅读[上一篇文章](/blog-zh-cn/git-basics-zh-cn/#工作区-workspace-和暂存区-staging)中的工作区和暂存区部分。
 
-要将更改添加到暂存区，你可以执行：
+要将更改添加到暂存区，你可以执行：（一次可以添加多个文件）
 
 ```bash
 git add <file>
@@ -197,10 +199,10 @@ git commit
 ```
 
 这个命令会打开默认的文本编辑器（通常是 Vim 或
-Nano），让你编写提交信息。如果你将提交信息留空，Git
+Nano），让你编写提交消息。如果你将提交消息留空，Git
 会中止提交。在文本编辑器界面中，Git 会向你展示一些关于提交的提示（如你将要提交的更改）。
 
-如果提交信息很短，你可以直接在命令行中编写提交信息：（**请将 `Your commit message` 替换为你的提交信息！**）
+如果提交消息很短，你可以直接在命令行中编写提交消息：（**请将 `Your commit message` 替换为你的提交消息！**）
 
 ```bash
 git commit -m "Your commit message"
@@ -214,9 +216,9 @@ git commit -m "Your commit message"
 
 已提交的文件在大多数情况下都可以轻松找回，而未提交的更改可能会丢失。因此，**强烈建议**你**经常提交**。一个好的方法是，如果你对仓库进行了更改，每天至少提交一次。通常，细粒度的提交在很多方面都比大的提交更好（如遴选、回滚、理解更改等）。
 
-很多人使用
+关于提交消息应该如何编写，很多人使用
 [Conventional Commits][conventional-commits]
-风格来编写提交信息。这种风格使得更容易、更清晰地理解提交中的更改。
+风格来编写提交消息。这种风格使得更容易、更清晰地理解提交中的更改。
 
 [conventional-commits]: https://www.conventionalcommits.org/
 
@@ -295,7 +297,7 @@ git fetch <remote-repo>
 
 抓取更改不会改变你的本地分支（除了远程跟踪分支）。这对于你只想了解远程仓库的更改而不想影响你的本地分支非常有用。
 
-### 从远程仓库拉取更改
+### 从远程仓库拉取并合并更改
 
 要从远程仓库拉取并合并更改，你可以执行：
 
@@ -328,6 +330,7 @@ git pull
 *.S
 
 # Some of the asm files cannot be ignored
+# Use ! to negate the ignore rule
 !not-generated.S
 
 # ignore the build directory
@@ -342,7 +345,7 @@ build/
 [gitignore-doc]: https://git-scm.com/docs/gitignore
 
 GitHub 为 `.gitignore` 文件提供了几个模板。你可以使用这些模板（需要将这些文件重命名为
-`.gitignore`）。你可能需要将几个模板合到一起来创建一个适合你的项目的
+`.gitignore`）。你可以将几个模板合到一起来创建一个适合你的项目的
 `.gitignore` 文件。这些模板可以在[GitHub 的 gitignore 仓库][github-gitignore]中找到。
 
 [github-gitignore]: https://github.com/github/gitignore/
@@ -409,9 +412,9 @@ git checkout <branch-name>
 > git checkout dev
 > ```
 
-### 标签
+### 添加标签
 
-要给一个提交打上标签，你可以执行：
+要给当前提交打上标签，你可以执行：
 
 ```bash
 git tag <tag-name>
@@ -444,7 +447,7 @@ git tag <tag-name>
 
 ## 练习
 
-现在，让我们来做一个练习，看看你是否已经掌握了基本用法。你可以尝试在你的电脑上完成以下任务。同时，我们也会提供一个可行的解决方案。上面的表格也可能帮助你解决这个练习。
+现在，让我们来做一些练习，看看你是否已经掌握了基本用法。你可以尝试在你的电脑上完成以下任务。同时，我们也会提供一个可行的解决方案。上面的表格也可能帮助你解决这个练习。
 
 ### Task A
 
@@ -461,7 +464,7 @@ git tag <tag-name>
 
 #### Subtask A.2
 
-进行一次初始提交，提交为 `README.txt` 文件，内容为 `my-repo`。提交信息为 `initial commit`。
+进行一次初始提交，提交为 `README.txt` 文件，内容为 `my-repo`。提交消息为 `initial commit`。
 
 {{< details summary="点击查看可行的解决方案" >}}
 
@@ -581,5 +584,5 @@ git tag <tag-name>
 
 ## 版权
 
-你可以将本文用于任何目的，只要你在第一处使用的地方明确标注原作者和链接
+你可以将本文用于任何目的，只要你在使用的地方明确标注原作者和链接
 (<https://lau.yeeyu.org/blog-zh-cn/git-basic-usage-zh-cn>)。请忽略页脚处的版权声明。
