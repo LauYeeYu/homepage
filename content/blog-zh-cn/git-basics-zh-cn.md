@@ -3,6 +3,7 @@ title = 'Git 基础知识 - Git 是如何设计的？'
 date = 2024-07-11T12:00:00-07:00
 draft = false
 tags = ["git-zh-cn", "git", "tutorial", "tutorial-zh-cn"]
+showToc = true
 +++
 
 本文中，我们将探讨版本控制系统，并介绍 Git 的设计。

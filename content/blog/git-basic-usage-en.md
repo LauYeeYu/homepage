@@ -2,6 +2,8 @@
 title = 'Git Basic Usage'
 date = 2024-07-28T12:00:00-07:00
 draft = false
+tags = ["git-en", "git", "tutorial", "tutorial-en"]
+showToc = true
 +++
 
 In the [previous article](/blog/git-basics-en/), we have discussed about the
@@ -587,8 +589,8 @@ Now. let's recap the basic usage of Git:
 | `git init` | Initialize a new repo | The current directory cannot be a existing repo |
 | `git clone <url>` | Clone an existing repo | The target directory should not exist |
 | `git add <path>` | Add changes in `<path>` to the staging area | Commit will only apply to files added to the staging |
-| `git diff` | Show the difference in the working directory | Use `--cached` to show difference in the staging area |
 | `git status` | Check the status of the repo | Recommended to check the status before making a commit |
+| `git diff` | Show the difference in the working directory | Use `--cached` to show difference in the staging area |
 | `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
 | `git remote add origin <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
 | `git push` | Push changes to the remote repo | If the fast-forward strategy fails, use `--force` to force push (this will discard some commits) |

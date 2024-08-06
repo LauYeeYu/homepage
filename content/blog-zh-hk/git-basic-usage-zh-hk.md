@@ -2,6 +2,8 @@
 title = 'Git 基礎用法'
 date = 2024-07-28T12:00:00-07:00
 draft = false
+tags = ["git-zh-hk", "git", "tutorial", "tutorial-zh-hk"]
+showToc = true
 +++
 
 在[上一篇文章](/blog-zh-hk/git-basics-zh-hk/)中，我們討論了版本控制系統的通用概念和

@@ -3,6 +3,7 @@ title = 'Git Basics - How was Git Designed?'
 date = 2024-07-11T12:00:00-07:00
 draft = false
 tags = ["git-en", "git", "tutorial", "tutorial-en"]
+showToc = true
 +++
 
 In this article, we will discuss about the version control system and how
