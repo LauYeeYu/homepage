@@ -190,6 +190,48 @@ git status
 `git status` 以獲取一些提示，並了解你的 Git 倉庫的狀態，因此，`git status` 基本是 Git
 中最經常使用的。
 
+### 顯示工作區與當前提交的差異
+
+在提交之前，你可能想查看工作區和當前提交之間的差異。要顯示所有差異，你可以執行：
+
+```bash
+git diff
+```
+
+Git 會以高亮顯示的方式顯示每個更改檔案中的差異（以及更改周圍的上下文）。
+
+如果你只想查看特定檔案或目錄中的差異，你可以執行：
+
+```bash
+git diff <file>...
+```
+
+> 例如，如果你想查看 `README.md` 檔案和 `src` 目錄中的差異，你可以執行：
+>
+> ```bash
+> git diff README.md src
+> ```
+
+### 顯示暫存區中的差異
+
+如果你想查看暫存區和當前提交之間的差異，你可以在 `git diff` 命令中添加 `--cached` 選項：
+
+```bash
+git diff --cached
+```
+
+如果你只想查看特定檔案或目錄中的差異，你可以執行：
+
+```bash
+git diff --cached <file>...
+```
+
+> 例如，如果你想查看 `README.md` 檔案和 `src` 目錄中的差異，你可以執行：
+>
+> ```bash
+> git diff --cached README.md src
+> ```
+
 ### 提交更改
 
 在將更改添加到暫存區後，你可以執行：
@@ -433,6 +475,7 @@ git tag <tag-name>
 | `git clone <url>` | 複製一個已存在的倉庫 | 目標目錄不能存在 |
 | `git add <path>` | 將 `<path>` 中的更改添加到暫存區 | 提交只會應用於添加到暫存區的檔案 |
 | `git status` | 檢查倉庫的狀態 | 推薦在提交前使用 |
+| `git diff` | 顯示工作區和當前提交之間的差異 | 使用 `--cached` 顯示暫存區的差異 |
 | `git commit` | 進行一次提交 | 如果消息很短，使用 `-m`；經常提交（檔案的更改在大多數情況下很容易找回） |
 | `git remote add origin <url>` | 添加一個遠程倉庫 | 遠程倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
 | `git push` | 將更改推送到遠程倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
