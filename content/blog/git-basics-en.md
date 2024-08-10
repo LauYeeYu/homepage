@@ -69,6 +69,7 @@ the versions at different times --- this is the idea of checkpoint. A
 checkpoint is basically the version of the data at a certain point.
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 ---
 title: Checkpoints displayed in Git graph
 ---
@@ -103,6 +104,7 @@ circumstances may happen:
    (if required) update the local version to the latest version.
 
    ```mermaid
+   %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
    gitGraph
      commit
      commit
@@ -117,6 +119,7 @@ circumstances may happen:
    also simple: update the local version to the latest version if required.
 
    ```mermaid
+   %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
    gitGraph
      commit
      commit
@@ -132,6 +135,7 @@ circumstances may happen:
    will discuss about this.
 
    ```mermaid
+   %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
    gitGraph
      commit
      commit
@@ -139,7 +143,7 @@ circumstances may happen:
      branch remote
      commit
      commit tag: "remote"
-     checkout main
+     checkout master
      commit
      commit
      commit tag: "local"
@@ -181,14 +185,15 @@ in software development, we usually have multiple versions for each client.
 This is because we might need to fix bugs for the current version while
 developing new features. To achieve this, we get the idea of branching.
 
-The graph below gives an example of branching. `main` branch (in git, it
-might also be called `master` branch, depending on the maintainer) is the
+The graph below gives an example of branching. `master` branch (in GitHub,
+it is called `main` branch by default, if you haven't change that) is the
 branch for latest features, and `feature-1` and `feature-2` are the
-branches for developing new features that are not ready for the `main`
+branches for developing new features that are not ready for the `master`
 branch. The `stable` branch is the branch for the latest stable version
 (usually the version for the latest release version).
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 ---
 title: Branching in Git graph
 ---
@@ -199,16 +204,16 @@ gitGraph
   commit
   commit
   commit
-  checkout main
+  checkout master
   commit
   commit
   branch feature-1
   commit
   commit
-  checkout main
+  checkout master
   branch feature-2
   commit
-  checkout main
+  checkout master
   commit
 ```
 
@@ -270,6 +275,7 @@ commit message should be short and clear, describing briefly about the
 changes in the commit.
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 ---
 title: Commits
 ---
@@ -321,18 +327,19 @@ Since commits only record their parent, we can have multiple branches
 pointing to the same commit as their parent.
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 gitGraph
   commit
   commit
   commit
   branch feature-1
   commit
-  checkout main
+  checkout master
   branch feature-2
   commit
   checkout feature-1
   commit
-  checkout main
+  checkout master
   commit
 ```
 
@@ -342,7 +349,7 @@ Useful as it is to represent commit, hash value is not human-friendly.
 Hence, we use references (or ref in short) to point to the commits with
 meaningful names in Git. Each reference will represent a unique commit
 in the repository. Branches, for instance, are actually references. The
-`main` branch is a reference pointing to the latest commit of the `main`
+`master` branch is a reference pointing to the latest commit of the `master`
 branch. So are the other branches. You may understand references as
 references in C++, or pointers in C/C++, Go, etc.
 
@@ -424,8 +431,8 @@ you fetch the remote repository.
 The corresponding remote tracking branch of a remote branch is usually named
 as `remote/branch`, where `remote` is the name of the remote repository and
 `branch` is the name of the remote branch. For example, the remote tracking
-branch of the `main` branch in the `origin` repository is usually named as
-`origin/main`.
+branch of the `master` branch in the `origin` repository is usually named as
+`origin/master`.
 
 As for updating the changes to the remote repository, Git allows you to push
 the new commits to the remote repository. However, Git only allows you to

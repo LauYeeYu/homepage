@@ -47,6 +47,7 @@ showToc = true
 (checkpoint) 的概念。每个 checkpoint 记录了某个特定时间（或者特定情况下）的数据。
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 ---
 title: 以 Git 示意图的方式表示 checkpoints
 ---
@@ -75,6 +76,7 @@ gitGraph
 1. 如果远程版本自从上次同步时没有更改，那么解决方案很简单，本地无需任何操作，（如果需要）将本地的版本更新为远端的最新版本即可。
 
    ```mermaid
+   %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
    gitGraph
      commit
      commit
@@ -87,6 +89,7 @@ gitGraph
 2. 如果远程版本自从上次同步后有更新，且本地版本自从上次同步后没有变更，那么解决方法仍然很简单，将本地版本更新成远端版本即可。
 
    ```mermaid
+   %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
    gitGraph
      commit
      commit
@@ -99,6 +102,7 @@ gitGraph
 3. 如果远程和本地都有修改（如下图），那么我们需要一些策略来将两个从同一版本派生出的不同修改同步到一起。在下一章节中，我们将着重讨论如何进行这样的合并。
 
     ```mermaid
+    %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
     gitGraph
       commit
       commit
@@ -106,7 +110,7 @@ gitGraph
       branch remote
       commit
       commit tag: "remote"
-      checkout main
+      checkout master
       commit
       commit
       commit tag: "local"
@@ -130,11 +134,12 @@ gitGraph
 
 在共享文档平台中，我们通常每个客户端都只有一个版本。然而，在软件开发中，我们常常要在一个客户端中使用多个版本。这是因为我们有时要在开发新功能的过程中修复原有版本的问题。根据这样的需求，我们有了分支的概念。
 
-下图是一个多分支的例子。`main` 分支（在 Git 中，我们有时也会用
-`master` 来表示主分支）是带有最新可用功能的分支，`feature-1` 和 `feature-2`
+下图是一个多分支的例子。`master` 分支（在 GitHub 中，默认使用
+ `main` 来表示主分支）是带有最新可用功能的分支，`feature-1` 和 `feature-2`
 是尚未完成的新功能开发分支，`stable` 分支是最新稳定版本（通常是最新的发布版本）的分支。
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 ---
 title: Git 示意图中的分支
 ---
@@ -145,16 +150,16 @@ gitGraph
   commit
   commit
   commit
-  checkout main
+  checkout master
   commit
   commit
   branch feature-1
   commit
   commit
-  checkout main
+  checkout master
   branch feature-2
   commit
-  checkout main
+  checkout master
   commit
 ```
 
@@ -200,6 +205,7 @@ graph TD
 下图展示了提交和它们的提交消息。通常，提交消息应当短小明确，简练地概括提交中的变更。
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 ---
 title: Commits
 ---
@@ -238,26 +244,27 @@ gitGraph
 我们注意到，由于提交会记录父提交，因此可能会有多个提交指向同一个父提交。
 
 ```mermaid
+%%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
 gitGraph
   commit
   commit
   commit
   branch feature-1
   commit
-  checkout main
+  checkout master
   branch feature-2
   commit
   checkout feature-1
   commit
-  checkout main
+  checkout master
   commit
 ```
 
 ### 引用 (Reference)
 
 我们注意到，尽管使用哈希值表示提交非常方便，然而哈希值对人来说并不方便，难以记忆。因此，在
-Git 中，我们会利用引用来指向某个特定的提交。比如，分支实际上就是引用 (reference/ref)。`main`
-实际上就是一个指向 `main` 分支中最新的提交的引用。其他的分支亦是如此。你可以将引用理解为如
+Git 中，我们会利用引用来指向某个特定的提交。比如，分支实际上就是引用 (reference/ref)。`master`
+实际上就是一个指向 `master` 分支中最新的提交的引用。其他的分支亦是如此。你可以将引用理解为如
 C++ 中的引用，或者 C/C++、Go 等语言的指针。
 
 除了分支，标签（表示特定的提交，通常被用于标记最新发布版本）也是引用。
@@ -313,8 +320,8 @@ graph TD
 请注意**远程**分支和**远程跟踪**分支之间的区别。远程分支是在远程服务器上的分支，而远程跟踪分支是本地仓库中的一个分支，用于跟踪远程仓库的变更。
 
 远程分支对应的远程跟踪分支的名字通常是 `remote/branch`，其中 `remote`
-是远程仓库的名字，`branch` 是远程分支的名字。比如，`origin/main` 是远程仓库
-`origin` 的 `main` 分支。
+是远程仓库的名字，`branch` 是远程分支的名字。比如，`origin/master` 是远程仓库
+`origin` 的 `master` 分支。
 
 关于将变更更新到远程仓库，Git 允许你将新的提交推送到远程仓库。然而，Git
 只允许你推送可以快进合并的提交，也就是说，远程分支的最后一个提交是你要推送的提交的父提交。你可以使用强制推送来覆盖这个限制，但是在使用强制推送时要小心。
