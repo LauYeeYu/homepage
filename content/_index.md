@@ -2,15 +2,17 @@
 
 I am Yiyu Liu (“Liu” is my family name, you may pronounce my family name as
 “Leo” and my given name as “Yee Yu”), an undergraduate at
-[ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity][sjtu]. Currently,
-I am fortunate to work with Prof. Quan Chen at
-[Emerging Parallel Computing Center (EPCC)][epcc], and I will work with Prof.
-[Baris Kasikci][baris] as research intern in the Paul G. Allen School of
-Computer Science & Engineering at the University of Washington from July to
-December, 2024. I am expected to graduate in June 2025.
+[ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity(SJTU)][sjtu].
+Currently, I am fortunate to work with Prof. [Baris Kasikci][baris] as a
+research intern in the Paul G. Allen School of Computer Science & Engineering
+at the University of Washington from July to December, 2024. Before that,
+I worked with Prof. [Quan Chen][quan-chen] from September, 2023 to June, 2024,
+at [Emerging Parallel Computing Center (EPCC)][epcc]. I am expected to
+graduate in June 2025.
 
 [acm-class]: https://acm.sjtu.edu.cn/
 [sjtu]: https://sjtu.edu.cn/
+[quan-chen]: https://www.cs.sjtu.edu.cn/~chen-quan/index_EN.html/
 [epcc]: http://epcc.sjtu.edu.cn/
 [baris]: https://homes.cs.washington.edu/~baris/
 
@@ -27,7 +29,8 @@ I'm looking for a PhD position for Fall 2025 PhD programs.
 
 ### FaaSMem: Improving Memory Efficiency of Serverless Computing with Memory Pool Architecture
 
-Chuhao Xu, **Yiyu Liu**, Zijun Li, Quan Chen*, Han Zhao, Deze Zeng, Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
+Chuhao Xu, **Yiyu Liu**, Zijun Li, Quan Chen*, Han Zhao, Deze Zeng,
+Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
 
 [ASPLOS 24][asplos24] / [Paper][faasmem-paper] / [Code][faasmem-code]
 
