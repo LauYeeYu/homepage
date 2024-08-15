@@ -266,6 +266,33 @@ git commit -m "Your commit message"
 
 [conventional-commits]: https://www.conventionalcommits.org/
 
+### 顯示提交歷史
+
+要查看提交歷史，你可以執行：
+
+```bash
+git log
+```
+
+你可以使用以下參數：
+
+- `--oneline`：每個提交僅顯示一行；
+- `--graph`：顯示提交關係圖。
+
+### 显示提交历史
+
+要查看提交历史，你可以执行：
+
+```bash
+git log
+```
+
+你可以使用以下参数：
+
+- `--oneline`：每个提交仅显示一行；
+- `--graph`：显示提交关系图。
+
+
 ### 在 Git 倉庫裡的任何地方使用 Git 子命令
 
 只要你在 Git 倉庫中，你就可以在倉庫的任何子目錄中使用 Git
@@ -479,6 +506,7 @@ git tag <tag-name>
 | `git status` | 檢查倉庫的狀態 | 推薦在提交前使用 |
 | `git diff` | 顯示工作區和當前提交之間的差異 | 使用 `--cached` 顯示暫存區的差異 |
 | `git commit` | 進行一次提交 | 如果消息很短，使用 `-m`；經常提交（檔案的更改在大多數情況下很容易找回） |
+| `git log` | 顯示提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 顯示提交圖 |
 | `git remote add origin <url>` | 添加一個遠程倉庫 | 遠程倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
 | `git push` | 將更改推送到遠程倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
 | `git fetch` | 從遠程倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |

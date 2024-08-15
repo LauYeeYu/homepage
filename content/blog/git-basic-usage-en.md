@@ -337,6 +337,19 @@ understand the changes in the commit.
 
 [conventional-commits]: https://www.conventionalcommits.org/
 
+### Show the Commit History
+
+To show the commit history, you can run:
+
+```bash
+git log
+```
+
+You may also use the following options:
+
+- `--oneline`: Show the commit history in one line.
+- `--graph`: Show the commit history in a graph.
+
 ### Use Git Subcommands anywhere in the Git Repository
 
 As long as you are in the Git repository, you can use Git subcommands
@@ -592,6 +605,7 @@ Now. let's recap the basic usage of Git:
 | `git status` | Check the status of the repo | Recommended to check the status before making a commit |
 | `git diff` | Show the difference in the working directory | Use `--cached` to show difference in the staging area |
 | `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
+| `git log` | Show the commit history | Use `--oneline` to show every commit in one line; use `--graph` to show commit graph |
 | `git remote add origin <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
 | `git push` | Push changes to the remote repo | If the fast-forward strategy fails, use `--force` to force push (this will discard some commits) |
 | `git fetch` | Fetch changes from the remote repo | Use `git fetch <repo>` if you want to fetch any non-default branch |

@@ -266,6 +266,19 @@ git commit -m "Your commit message"
 
 [conventional-commits]: https://www.conventionalcommits.org/
 
+### 显示提交历史
+
+要查看提交历史，你可以执行：
+
+```bash
+git log
+```
+
+你可以使用以下参数：
+
+- `--oneline`：每个提交仅显示一行；
+- `--graph`：显示提交关系图。
+
 ### 在 Git 仓库里的任何地方使用 Git 子命令
 
 只要你在 Git 仓库中，你就可以在仓库的任何子目录中使用 Git
@@ -482,6 +495,7 @@ git tag <tag-name>
 | `git status` | 检查仓库的状态 | 推荐在提交前使用 |
 | `git diff` | 显示工作区和当前提交之间的差异 | 使用 `--cached` 显示暂存区的差异 |
 | `git commit` | 进行一次提交 | 如果消息很短，使用 `-m`；经常提交（文件的更改在大多数情况下很容易找回） |
+| `git log` | 显示提交历史 | 使用 `--oneline` 让每个提交只占用一行；使用 `--graph` 显示提交图 |
 | `git remote add origin <url>` | 添加一个远程仓库 | 远程仓库的默认名称是 `origin`；你可能需要遵循第一次推送时的指示（例如，`git push --set-upstream origin master`） |
 | `git push` | 将更改推送到远程仓库 | 如果快进合并策略失败，使用 `--force` 强制推送（这会丢弃一些提交） |
 | `git fetch` | 从远程仓库抓取更改 | 如果你想抓取非默认分支，使用 `git fetch <repo>` |
