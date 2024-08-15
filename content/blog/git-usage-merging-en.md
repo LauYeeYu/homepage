@@ -310,3 +310,209 @@ the `master` branch cannot merge the `feat` branch in a fast-forward way.
 - Rebase strategy: rebase the `master` branch on the `feat` branch, then
   switch to the `master` branch and merge the `feat` branch in a fast-forward
   way.
+
+## Relative Commit Reference
+
+TODO
+
+## Stash
+
+Sometimes, you have to switch to another branch, but find yourself not ready
+to commit the changes in the current branch. In this case, if you switch to
+other branch directly, Git may refuse to switch due to the conflict of
+changes (this only happens when the file you have changes is different between
+two branches).
+
+Thus, Git allows you to stash the changes temporarily, and retrieve them
+later at any time. To be specific, Git has a modification stack, which
+records all the stashed changes. You can use the following commands to
+use the stash feature:
+
+1. Stash the changes:
+
+   ```bash
+   git stash
+   ```
+
+2. Retrieve the changes:
+
+   ```bash
+    git stash pop
+    ```
+
+3. List the stashed changes:
+
+   ```bash
+   git stash list
+   ```
+
+4. Clear all stashed changes:
+
+   ```bash
+    git stash clear
+    ```
+
+## Get the common ancestor
+
+In some cases, you may want to get the common ancestor of multiple branches
+(normally two). You can use the following command to get the common ancestor:
+
+```bash
+git merge-base --all <commit>...
+```
+
+> For example, if you want to get the common ancestor of the `master` and
+> `feat` branches, you can use the following command:
+>
+> ```bash
+> git merge-base --all master feat
+> ```
+
+## Restore Files from Commits to the Working Directory
+
+If you mistakenly delete files or directories in the working directory that
+**have been committed**, you can restore them by using the following command:
+
+```bash
+git restore <path>...
+```
+
+Please note that this operation will drop all the changes of the restored
+files, so it might be dangerous. To achieve similar functionality, you can
+also [stash the changes](#stash), which is safer.
+
+> For example, if you mistakenly delete the `README.txt` file, you can use
+> the following command to restore it:
+>
+> ```bash
+> git restore README.txt
+> ```
+
+If you want to restore something from commits other than `HEAD`, you can
+specify it with `--source=<tree>` option. The `<tree>` can be a commit hash
+or any reference to a commit. For example, if you want to restore the
+`README.txt` file from the parent commit of `HEAD`, you can use the following
+command:
+
+```bash
+git restore --source=HEAD~ README.txt
+```
+
+If `git restore` command is not supported in your Git version, you can use
+`git checkout` command instead. The usage is similar to `git restore` command:
+
+```bash
+git checkout <path>...
+```
+
+> For example, in the same case of the previous example, you can use:
+>
+> ```bash
+> git checkout README.txt
+> ```
+
+## Unstage Files
+
+If you mistakenly add files to the staging area, you can unstage them by
+using the following command:
+
+```bash
+git restore --staged <path>...
+```
+
+> For example, if you mistakenly add the `README.txt` file to the staging
+> area, you can use the following command to unstage it:
+>
+> ```bash
+> git restore --staged README.txt
+> ```
+
+If `git restore` command is not supported in your Git version, you can use
+`git reset` command instead:
+
+```bash
+git reset HEAD <path>...
+```
+
+> For example, in the same case of the previous example, you can use:
+>
+> ```bash
+> git reset HEAD README.txt
+> ```
+
+## Change the Head Commit of a Branch
+
+Sometimes, we may want to change the head commit of a certain branch to
+another commit (e.g., the parent commit of the current head).
+
+If you are not on the branch you want to change, switch to that branch first.
+Then you may use the following command to achieve this:
+
+```bash
+git reset [--soft | --mixed | --hard | --merge | --keep] <commit>
+```
+
+As the [git reset documentation](https://git-scm.com/docs/git-reset) says,
+the `--soft`, `--mixed`, `--hard`, `--merge`, and `--keep` options mean:
+
+- `--soft`: Does not touch the index file or the working tree at all (but
+  resets the head to `<commit>`, just like all modes do). This leaves all
+  your changed files "Changes to be committed", as `git status` would put it.
+
+- `--mixed` (default): Resets the index but not the working tree (i.e., the
+  changed files are preserved but not marked for commit) and reports what
+  has not been updated.
+
+- `--hard`: Resets the index and working tree. Any changes to tracked files
+  in the working tree since `<commit>` are discarded. Any untracked files or
+  directories in the way of writing any tracked files are simply deleted.
+
+- `--merge`: Resets the index and updates the files in the working tree that
+  are different between `<commit>` and `HEAD`, but keeps those which are
+  different between the index and working tree (i.e. which have changes
+  which have not been added). If a file that is different between `<commit>`
+  and the index has unstaged changes, reset is aborted.
+
+- `--keep`: Resets index entries and updates files in the working tree that
+  are different between `<commit>` and `HEAD`. If a file that is different
+  between `<commit>` and `HEAD` has local changes, reset is aborted.
+
+> For example, if you want to change the head commit of the `master` branch
+> to its parent commit and also to reset the index and the working tree, you
+> can use the following command:
+>
+> ```bash
+> git reset --hard HEAD~
+> ```
+
+## Recap
+
+Now. let's recap the usage introduced in this article and the previous one.
+
+| Command | Description | Note |
+| --- | --- | --- |
+| `git init` | Initialize a new repo | The current directory cannot be a existing repo |
+| `git clone <url>` | Clone an existing repo | The target directory should not exist |
+| `git add <path>` | Add changes in `<path>` to the staging area | Commit will only apply to files added to the staging |
+| `git status` | Check the status of the repo | Recommended to check the status before making a commit |
+| `git diff` | Show the difference in the working directory | Use `--cached` to show difference in the staging area |
+| `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
+| `git remote add origin <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
+| `git push` | Push changes to the remote repo | If the fast-forward strategy fails, use `--force` to force push (this will discard some commits) |
+| `git fetch` | Fetch changes from the remote repo | Use `git fetch <repo>` if you want to fetch any non-default branch |
+| `git pull` | Fetch and merge changes from the remote repo | The default merging strategy may differ |
+| `.gitignore` | Ignore files | Use `.gitignore` to ignore files you don't want to commit |
+| `git branch <branch>` | Add a new branch | The new branch name should not exist; alternative solution: `git checkout -b <branch>` |
+| `git switch <branch>` | Switch to another branch | Alternative solution: `git checkout <branch>` |
+| `git merge <commit>...` | Merge branches | Use `--ff-only` to force fast-forward merge; use `--squash` to merge without creating a new commit |
+| `git rebase <commit>...` | Rebase branches | Use `-i` or `--interactive` to use more features |
+| `git stash` | Stash changes | Use `pop`, `clear` and `list` to retrieve, clear all, and list stashed changes |
+| `git merge-base --all <commit>...` | Get the common ancestor | |
+| `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
+
+## Copyright
+
+You may use this article for any purpose as long as the original author
+and link (<https://lau.yeeyu.org/blog/git-usage-merging-en>) are clearly noted
+at the place you use this article. This copyright notice overrides the
+footnote of the website.
