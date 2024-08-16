@@ -313,7 +313,24 @@ the `master` branch cannot merge the `feat` branch in a fast-forward way.
 
 ## Relative Commit Reference
 
-TODO
+When you are working on multiple branches, you may want to specify a commit
+relative to a certain commit. Obviously, you can show the git log first and
+get the hash, but it is not efficient.
+
+For convenience, Git allows you to specify a commit by the relationship to
+another commit (e.g., `HEAD^` means the parent commit and `HEAD~2` means
+the parent of HEAD's parent). The rules are as follows:
+
+- `<rev>~<n>`: the `<n>`th generation ancestor commit of `<rev>`. For example:
+  - `HEAD~0`: equivalent to `HEAD`.
+  - `HEAD~1`: the parent commit of `HEAD`.
+  - `HEAD~n`: the `n`th generation ancestor of `HEAD`.
+- `<rev>^<n>`: switch among parents (The commits created on `git merge` have
+  multiple parents). Note: `^` alone has the meaning of "parent", and the
+  `n` is for switching among one or multiple parents (if you exceed the
+  number of parents, then an error will occur). `n` means the `n`th parent
+  commit of `<rev>`. For example, `HEAD^` (equivalent to `HEAD^1`) and
+  `HEAD^2`.
 
 ## Stash
 
@@ -506,9 +523,13 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git switch <branch>` | Switch to another branch | Alternative solution: `git checkout <branch>` |
 | `git merge <commit>...` | Merge branches | Use `--ff-only` to force fast-forward merge; use `--squash` to merge without creating a new commit |
 | `git rebase <commit>...` | Rebase branches | Use `-i` or `--interactive` to use more features |
+| `<rev>~<n>` | Get the `<n>`th generation ancestor commit of `<rev>` | |
+| `<rev>^<n>` | Get the `<n>`th parent commit of `rev` | `^` alone means "parent" |
 | `git stash` | Stash changes | Use `pop`, `clear` and `list` to retrieve, clear all, and list stashed changes |
 | `git merge-base --all <commit>...` | Get the common ancestor | |
 | `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
+| `git restore --staged <path>` | Unstage files | Alternative solution: `git reset HEAD <path>` |
+| `git reset <commit>` | Change the head commit of a branch | Options: `--soft`, `--mixed`, `--hard`, `--merge`, or `--keep` |
 
 ## Copyright
 
