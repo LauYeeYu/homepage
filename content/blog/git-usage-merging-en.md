@@ -502,6 +502,170 @@ the `--soft`, `--mixed`, `--hard`, `--merge`, and `--keep` options mean:
 > git reset --hard HEAD~
 > ```
 
+## Show the Difference
+
+There are four common cases to show the difference in Git:
+
+- [Show the Difference of the Working Directory and certain Commits](#show-the-difference-of-the-working-directory-and-certain-commits)
+- [Show the Difference of the Staging Area and certain Commits](#show-the-difference-of-the-staging-area-and-certain-commits)
+- [Show the Difference of Commits](#show-the-difference-of-commits)
+- [Generate a Patch](#generate-a-patch)
+
+### Show the Difference of the Working Directory and certain Commits
+
+Use the following command to show the difference between the working directory
+and certain commits:
+
+```bash
+git diff <commit>
+```
+
+> For example, if you want to show the difference between the working directory
+> and the `feat` branch, you can use the following command:
+>
+> ```bash
+> git diff feat
+> ```
+
+Specifically, if you want to see the difference between the working directory
+and the current `HEAD`, you can just run:
+
+```bash
+git diff
+```
+
+To show the difference of certain files or directories, you can specify them
+by:
+  
+```bash
+git diff <commit> <path>...
+```
+
+> For example, if you want to show the difference between the working directory
+> and the `feat` branch for the `README.txt` file, you can use the following
+> command:
+>
+> ```bash
+> git diff feat README.txt
+
+### Show the Difference of the Staging Area and certain Commits
+
+Use the following command to show the difference between the staging area
+and certain commits: (similar to the previous case, just add `--cached` option)
+
+```bash
+git diff --cached <commit>
+```
+
+Similar to the previous case, you can emit the `<commit>` parameter to show
+the difference between the staging area and the current `HEAD`. Also, you can
+specify the files or directories to show the difference.
+
+### Show the Difference of Commits
+
+Use the following command to show the difference between two commits:
+
+```bash
+git diff <commit> <commit>
+```
+
+> For example, if you want to show the difference between the `master` and
+> `feat` branches, you can use the following command:
+>
+> ```bash
+> git diff master feat
+> ```
+
+Similar to the previous cases, you can specify the files or directories to
+show the difference:
+
+```bash
+git diff <commit> <commit> <path>...
+```
+
+### Generate a Patch
+
+To generate a patch for any difference, you just need to redirect the output
+of the previous cases to a file.
+
+> For example, if you want to generate a patch for the difference between the
+> current working directory and `HEAD` to a file named `patch.diff`, you can
+> use the following command:
+>
+> ```bash
+> git diff > patch.diff
+> ```
+
+In the next section, we will introduce how to apply a patch.
+
+## Apply a Patch
+
+To apply a patch, you can run:
+
+```bash
+git apply <patch>
+```
+
+> For example, if you want to apply the `patch.diff` patch in the `patch/`
+> directory, you can use the following command:
+>
+> ```bash
+> git apply patch/patch.diff
+> ```
+
+## Show a Commit
+
+To show the details of a commit, you can use the following command:
+
+```bash
+git show <commit>
+```
+
+> For example, if you want to show the details of the parent commit of the
+> current `HEAD`, you can use the following command:
+>
+> ```bash
+> git show HEAD~
+> ```
+
+## Revert a Commit
+
+If we made some wrong changes in some commit(s) (e.g., introduced another more
+severe bug when solving a bug), we can revert the commit(s) by running:
+
+```bash
+git revert <commit>...
+```
+
+This will revert every commit. Please not that a new commit will be created
+for every reverted commit. If you don't want to create multiple commits, you
+can use the `--no-commit` or `-n` option.
+
+> For example, if you want to revert the commit `614b994` and `d4be492`, you
+> can use the following command:
+>
+> ```bash
+> git revert 614b994 d4be492
+> ```
+>
+> This will create two new commits, one for each reverted commit.
+
+## Cherry-pick a Commit
+
+TODO
+
+## Find Certain Patterns in Files
+
+TODO
+
+## Show the Reference Log
+
+TODO
+
+## Manage Remote Repositories
+
+TODO
+
 ## Recap
 
 Now. let's recap the usage introduced in this article and the previous one.
@@ -530,6 +694,10 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
 | `git restore --staged <path>` | Unstage files | Alternative solution: `git reset HEAD <path>` |
 | `git reset <commit>` | Change the head commit of a branch | Options: `--soft`, `--mixed`, `--hard`, `--merge`, or `--keep` |
+| `git diff` | Show the difference | Use `--cached` to show the difference in the staging area; specify the paths after the commit(s) |
+| `git apply <patch>` | Apply a patch | |
+| `git show <commit>` | Show a commit | |
+| `git revert <commit>...` | Revert a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
 
 ## Copyright
 
