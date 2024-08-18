@@ -652,19 +652,139 @@ can use the `--no-commit` or `-n` option.
 
 ## Cherry-pick a Commit
 
-TODO
+Sometimes, we may want to apply commits from other branches to the current
+branch. For instance, we have a development branch and a main branch for
+production. We may want to apply some commits from the development branch to
+the main branch. The development branch may have some commits that fix
+critical bugs, and we want to apply them to the main branch. In this case, we
+want to apply these changes to the main branch.
+
+Git provides the `cherry-pick` command to apply commits to the current branch.
+To cherry-pick commits, you can use the following command:
+
+```bash
+git cherry-pick <commit>...
+```
+
+This will apply the commits one by one. Similar to the `revert` command, a new
+commit will be created for every cherry-picked commit. If you don't want to
+create multiple commits, you can use the `--no-commit` or `-n` option.
+
+> For example, if you want to cherry-pick the commit `614b994` and `d4be492`,
+> you can use the following command:
+>
+> ```bash
+> git cherry-pick 614b994 d4be492
+> ```
+>
+> This will create two new commits, one for each cherry-picked commit.
 
 ## Find Certain Patterns in Files
 
-TODO
+If you want to find certain patterns (e.g., a string) in files, you can use
+the following command:
+
+```bash
+git grep <pattern> <path>...
+```
+
+If you don't specify the `<path>`, Git will search in the whole repository.
+The pattern is similar to the pattern in the `grep` command.
+
+> Note: this command has other alternatives, (e.g. [rip-grep][ripgrep]), and
+> we will introduce them in the coming articles.
+
+[ripgrep]: https://github.com/BurntSushi/ripgrep
 
 ## Show the Reference Log
 
-TODO
+In the basic usage article, we mentioned that if the changes can be retrieved
+easily if committed. This is because Git has a reference log, which records
+all changes about commits. You can see every operation related to commits
+with reference log. To show the reference log, you can run:
+
+```bash
+git reflog
+```
 
 ## Manage Remote Repositories
 
-TODO
+In the basic usage article, we introduced how to add a remote repository. Here,
+we will introduce more commands to manage remote repositories.
+
+### List Remote Repositories
+
+To list all the remote repositories, you can use the following command:
+
+```bash
+git remote show
+```
+
+Use the `--version` or `-v` option to show more details:
+
+```bash
+git remote -v show
+```
+
+To list a specific remote repository, you can run:
+
+```bash
+git remote show <repo>
+```
+
+> For example, if you want to show the details of the `origin` repo, you can
+> use the following command:
+>
+> ```bash
+> git remote show origin
+> ```
+
+### Add New Remote Repositories
+
+This has already been introduced in the basic usage article. Use the following
+command to add a new remote repository:
+
+```bash
+git remote add <name> <url>
+```
+
+### Remove Remote Repositories
+
+To remove a remote repository, you can use the following command:
+
+```bash
+git remote remove <name>
+```
+
+> For example, if you want to remove the `origin` remote repository, you can
+> use the following command:
+>
+> ```bash
+> git remote remove origin
+> ```
+
+### Modify Remote Repositories
+
+To modify a remote repository, you can use the following command:
+
+```bash
+git remote set-url <name> <url>
+```
+
+> For example, if you want to modify the `origin` remote repository to
+> `git@github.com:github/gitignore.git`, you can use the following command:
+>
+> ```bash
+> git remote set-url origin git@github.com:github/gitignore.git
+> ```
+
+### Rename Remote Repositories
+
+To rename a remote repository, you can use the following command:
+
+```bash
+git remote rename <old-name> <new-name>
+```
 
 ## Recap
 
@@ -678,7 +798,11 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git status` | Check the status of the repo | Recommended to check the status before making a commit |
 | `git diff` | Show the difference in the working directory | Use `--cached` to show difference in the staging area |
 | `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
-| `git remote add origin <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
+| `git remote add <name> <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
+| `git remote show` | List remote repos | Use `-v` to show more details; you may specify the repo by name |
+| `git remote set-url <name> <url>` | Modify a remote repo | |
+| `git remote remove <name>` | Remove a remote repo | |
+| `git remote rename <old> <new>` | Rename a remote repo | |
 | `git push` | Push changes to the remote repo | If the fast-forward strategy fails, use `--force` to force push (this will discard some commits) |
 | `git fetch` | Fetch changes from the remote repo | Use `git fetch <repo>` if you want to fetch any non-default branch |
 | `git pull` | Fetch and merge changes from the remote repo | The default merging strategy may differ |
@@ -698,6 +822,16 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git apply <patch>` | Apply a patch | |
 | `git show <commit>` | Show a commit | |
 | `git revert <commit>...` | Revert a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
+| `git cherry-pick <commit>...` | Cherry-pick a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
+| `git grep <pattern> <path>...` | Find certain patterns in files | Search the whole repo if path not specified |
+| `git reflog` | Show the reference log | |
+
+## Conclusion
+
+In this article, we introduced the advanced usage of Git, focusing on the
+commands related to merging branches. I hope this article will help you
+a lot in terms of managing multiple branches. We will introduce the usage
+of submodules in the next article.
 
 ## Copyright
 
