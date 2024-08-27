@@ -17,7 +17,8 @@ efficient, is a common practice in Git. However, it is not easy for a
 beginner to leverage the features of branches, especially the features
 related to merging. If you don't have a good understanding of all the
 crucial commands and concepts, then you will get disoriented when you
-encounter a problem when handling multiple branches.
+encounter a problem when handling multiple branches. This article will
+help you understand these concepts and commands well.
 
 This article will assume that you have a good command of the basic usage,
 which is introduced in the
@@ -70,9 +71,9 @@ There are basically two behaviours of "merge" command:
 
 - **3-way merge**. If `HEAD` is not the ancestor of the branch to be merged,
   Git will create a new commit to merge the two branches. The graph below
-  depicts the 3-way merge. In this case, Git will create a new commit to
-  merge the two branches, where the new commit has two parents -- the last
-  commit of the branch to be merged and the commit you are previously on.
+  depicts the 3-way merge. In this case, the new commit has two parents --
+  the last commit of the branch to be merged and the commit you are
+  previously on.
 
   ```mermaid
   %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
@@ -152,7 +153,7 @@ gitGraph
 ```
 
 Then, after rebasing the `master` branch on the `feat` branch, the graph
-will be like this:
+will be like this a:
 
 ```mermaid
 %%{init: {'gitGraph': {'mainBranchName': 'master'}} }%%
@@ -160,12 +161,21 @@ gitGraph
 checkout master
   commit id: "A"
   commit id: "B"
+  branch feat-old
+  commit id: "C"
+  checkout master
   commit id: "D"
+  checkout feat-old
+  commit id:"E"
+  checkout master
   commit id: "F"
+  checkout feat-old
+  commit id: "G" tag: "old HEAD"
+  checkout master
   branch feat
   commit id: "C1"
   commit id: "E1"
-  commit id: "G1" tag: "HEAD"
+  commit id: "G1" tag: "new HEAD"
 ```
 
 As you can see, the `feat` branch is rebased on the `master` branch, and
@@ -176,7 +186,8 @@ rebase operation.
 The rebase operation basically applies all the affected branch, which
 includes all the branch from the shared ancestor to the current branch,
 to the branch-to-be-rebased one by one. This is why it is called rebase,
-because it set the base of the current branch to the branch-to-be-rebased.
+because it set the base of the current branch from the common ancestor
+to the branch-to-be-rebased.
 
 Please note that you should be the **only** maintainer on the branch on
 which you are rebasing. Otherwise, you will probably encounter a lot of
@@ -185,20 +196,19 @@ problems.
 To rebase branches, you can use the following command:
 
 ```bash
-git rebase <commit>...
+git rebase <commit>
 ```
 
-> For example, if you are in the `master` branch and want to merge the
-> `feat` branch, you can use the following command:
+> For example, if you are in the `feat` branch and want to rebase on the
+> `master` branch, you can use the following command:
 >
 > ```bash
-> git merge feat
+> git rebase master
 > ```
 
 Please note that:
 
 - The `<commit>` parameter can be a commit hash or any reference to a commit.
-- The number of commits to be merged can be more than one.
 - If no commits are specified, Git will merge the remote-tracking counterpart
   of the current branch.
 - If a conflict occurs, you should resolve it and then use `git rebase
@@ -351,7 +361,8 @@ use the stash feature:
    git stash
    ```
 
-2. Retrieve the changes:
+2. Retrieve the changes: (You may need to resolve the conflicts, use
+   `git status` to show more information)
 
    ```bash
     git stash pop
@@ -369,7 +380,7 @@ use the stash feature:
     git stash clear
     ```
 
-## Get the common ancestor
+## Get the Common Ancestor
 
 In some cases, you may want to get the common ancestor of multiple branches
 (normally two). You can use the following command to get the common ancestor:
@@ -491,8 +502,13 @@ the `--soft`, `--mixed`, `--hard`, `--merge`, and `--keep` options mean:
   and the index has unstaged changes, reset is aborted.
 
 - `--keep`: Resets index entries and updates files in the working tree that
-  are different between `<commit>` and `HEAD`. If a file that is different
-  between `<commit>` and `HEAD` has local changes, reset is aborted.
+  are different between `<commit>` and `HEAD` and regards all other files
+  (including the staged or unstaged) as unstaged[^1]. If a file that is
+  different between `<commit>` and `HEAD` has local changes, reset is aborted.
+
+[^1]: The original document does not directly mention that all other files
+      (including the staged or unstaged) are regarded as unstaged. This part
+      part is added in order to make the explanation clearer.
 
 > For example, if you want to change the head commit of the `master` branch
 > to its parent commit and also to reset the index and the working tree, you
@@ -648,16 +664,15 @@ can use the `--no-commit` or `-n` option.
 > git revert 614b994 d4be492
 > ```
 >
-> This will create two new commits, one for each reverted commit.
+> This will create two new commits, each for a reverted commit.
 
 ## Cherry-pick a Commit
 
 Sometimes, we may want to apply commits from other branches to the current
 branch. For instance, we have a development branch and a main branch for
-production. We may want to apply some commits from the development branch to
-the main branch. The development branch may have some commits that fix
-critical bugs, and we want to apply them to the main branch. In this case, we
-want to apply these changes to the main branch.
+production. The development branch has some commits that fix critical bugs,
+and we want to apply them to the main branch. In this case, we want to apply
+these changes to the main branch.
 
 Git provides the `cherry-pick` command to apply commits to the current branch.
 To cherry-pick commits, you can use the following command:
@@ -677,7 +692,7 @@ create multiple commits, you can use the `--no-commit` or `-n` option.
 > git cherry-pick 614b994 d4be492
 > ```
 >
-> This will create two new commits, one for each cherry-picked commit.
+> This will create two new commits, each for a cherry-picked commit.
 
 ## Find Certain Patterns in Files
 
@@ -720,7 +735,7 @@ To list all the remote repositories, you can use the following command:
 git remote show
 ```
 
-Use the `--version` or `-v` option to show more details:
+Use the `--verbose` or `-v` option to show more details:
 
 ```bash
 git remote -v show
@@ -763,9 +778,9 @@ git remote remove <name>
 > git remote remove origin
 > ```
 
-### Modify Remote Repositories
+### Modify Address of Remote Repositories
 
-To modify a remote repository, you can use the following command:
+To modify the address of a remote repository, you can use the following command:
 
 ```bash
 git remote set-url <name> <url>
@@ -798,9 +813,10 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git status` | Check the status of the repo | Recommended to check the status before making a commit |
 | `git diff` | Show the difference in the working directory | Use `--cached` to show difference in the staging area |
 | `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
+| `git log` | Show the commit history | Use `--oneline` to show every commit in one line; use `--graph` to show commit graph |
 | `git remote add <name> <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
 | `git remote show` | List remote repos | Use `-v` to show more details; you may specify the repo by name |
-| `git remote set-url <name> <url>` | Modify a remote repo | |
+| `git remote set-url <name> <url>` | Modify the adress of a remote repo | |
 | `git remote remove <name>` | Remove a remote repo | |
 | `git remote rename <old> <new>` | Rename a remote repo | |
 | `git push` | Push changes to the remote repo | If the fast-forward strategy fails, use `--force` to force push (this will discard some commits) |
@@ -810,7 +826,7 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git branch <branch>` | Add a new branch | The new branch name should not exist; alternative solution: `git checkout -b <branch>` |
 | `git switch <branch>` | Switch to another branch | Alternative solution: `git checkout <branch>` |
 | `git merge <commit>...` | Merge branches | Use `--ff-only` to force fast-forward merge; use `--squash` to merge without creating a new commit |
-| `git rebase <commit>...` | Rebase branches | Use `-i` or `--interactive` to use more features |
+| `git rebase <commit>` | Rebase branches | Use `-i` or `--interactive` to use more features |
 | `<rev>~<n>` | Get the `<n>`th generation ancestor commit of `<rev>` | |
 | `<rev>^<n>` | Get the `<n>`th parent commit of `rev` | `^` alone means "parent" |
 | `git stash` | Stash changes | Use `pop`, `clear` and `list` to retrieve, clear all, and list stashed changes |
