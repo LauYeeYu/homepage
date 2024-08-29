@@ -7,7 +7,7 @@ showToc = true
 +++
 
 在[上一篇文章](/blog-zh-hk/git-basics-zh-hk/)中，我們討論了版本控制系統的通用概念和
-Git 的設計。在本文中，我們將介紹 Git 的基本用法。
+Git 的設計。在本文中，我們將介紹 Git 的基礎用法。
 
 <!--more-->
 
