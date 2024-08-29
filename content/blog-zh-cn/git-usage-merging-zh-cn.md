@@ -1,7 +1,7 @@
 +++
 title = 'Git 进阶用法：合并分支'
 date = 2024-08-06T12:00:00-07:00
-draft = true
+draft = false
 tags = ["git-zh-cn", "git", "tutorial", "tutorial-zh-cn"]
 showToc = true
 +++
@@ -10,6 +10,8 @@ showToc = true
 的基础用法。在本文中，我们将介绍合并分支以及其相关用法。
 
 <!--more-->
+
+*本文章有其他语言的版本：[English（英文）](/blog/git-usage-merging-en)及[繁體中文（繁体中文）](/blog-zh-hk/git-usage-merging-zh-hk)。如果你更熟悉这些语言，建议阅读这些语言的版本。*
 
 在 Git 中，我们时常会使用多个分支来提升工作效率，使工作流程更加灵活。然而，对于初学者来说，理解并使用这些功能并非易事，尤其是合并分支相关的功能。如果你对关键命令和概念不够了解，那么在处理多个分支时遇到问题时，你可能会不知所措。本文将介绍这些部分的用法，让读者更好地理解这些功能。
 
@@ -246,7 +248,7 @@ git rebase <commit>
   - `HEAD~1`：`HEAD` 的父提交。
   - `HEAD~n`：`HEAD` 的第 `n` 代祖先提交。
 - `<rev>^<n>`：在多个父提交的情况下切换（`git merge`
-  产生的提交有多个父提交）。注意：`^` 单独表示“父提交”，`n`
+  产生的提交有多个父提交）。注意：`^` 单独表示「父提交」，`n`
   用于在一个或多个父提交中切换（如果超出父提交的数量，将会出现错误）。`n`
   表示 `<rev>` 的第 `n` 个父提交。例如，`HEAD^`（等价于 `HEAD^1`）和 `HEAD^2`。
 
@@ -304,7 +306,7 @@ git merge-base --all <commit>...
 git restore <path>...
 ```
 
-请注意，这个操作会丢弃所有已更改的文件，因此可能会有风险。为了更安全地实现类似的功能，你也可以[暂存更改](#暂存-stash)。
+请注意，这个操作会丢弃所有已更改的文件，因此可能会有风险。为了更安全地实现类似的功能，你也可以[暂时储藏更改](#暂时储藏-stash)。
 
 > 例如，如果你误删了 `README.txt` 文件，你可以使用以下命令将其恢复：
 >
@@ -371,15 +373,11 @@ git reset [--soft | --mixed | --hard | --merge | --keep] <commit>
 
 - `--soft`：不会对暂存的文件或工作目录进行任何更改（但是会将 HEAD 重置为
   `<commit>`，就像所有模式一样）。这将使所有更改的文件变为待提交文件。
-
 - `--mixed`（默认）：重置暂存区但不重置工作目录（即更改的文件会被保留，但不会标记为提交），并报告未更新的文件。
-
 - `--hard`：重置暂存区和工作目录。自 `<commit>` 以来对工作目录中已跟踪文件的任何更改都将被丢弃。任何在写入任何已跟踪文件的路径上的未跟踪文件或目录都将被直接删除。
-
 - `--merge`：重置暂存区并更新工作目录中 `<commit>` 和 `HEAD`
   之间不同的文件，但保留暂存区和工作目录之间不同的文件（即具有未添加的更改的文件）。如果
   `<commit>` 和暂存区之间的文件之间有不同的文件具有未提交的更改，操作将被中止。
-
 - `--keep`：重置暂存区的内容并更新工作目录中 `<commit>` 和 `HEAD`
   之间不同的文件，并将其余的文件（包括暂存的和未暂存的）当作未暂存的[^1]。如果
   `<commit>` 和 `HEAD` 之间的文件之间有未提交的更改，重置将被中止。
@@ -654,7 +652,7 @@ git remote rename <old-name> <new-name>
 | `git clone <url>` | 复制一个已存在的仓库 | 目标目录不能存在 |
 | `git add <path>` | 将 `<path>` 中的更改添加到暂存区 | 提交只会应用于添加到暂存区的文件 |
 | `git status` | 检查仓库的状态 | 推荐在提交前使用 |
-| `git diff` | 显示工作区和当前提交之间的差异 | 使用 `--cached` 显示暂存区的差异 |
+| `git diff` | 显示差异 | 使用 `--cached` 显示暂存区的差异；可以指定路径 |
 | `git commit` | 进行一次提交 | 如果消息很短，使用 `-m`；经常提交（文件的更改在大多数情况下很容易找回） |
 | `git log` | 显示提交历史 | 使用 `--oneline` 让每个提交只占用一行；使用 `--graph` 显示提交图 |
 | `git remote add origin <url>` | 添加一个远程仓库 | 远程仓库的默认名称是 `origin`；你可能需要遵循第一次推送时的指示（例如，`git push --set-upstream origin master`） |
@@ -671,13 +669,12 @@ git remote rename <old-name> <new-name>
 | `git merge <branch>` | 合并分支 | 使用 `--ff-only` 强制快进合并；使用 `--squash` 合并但不创建新提交或避免创建合并提交 |
 | `git rebase <branch>` | 变基分支 | 使用 `-i` 或 `--interactive` 使用更多功能 |
 | `<rev>~<n>` | 获取 `<rev>` 的第 `n` 代祖先提交 | |
-| `<rev>^<n>` | 获取 `<rev>` 的第 `n` 个父提交 | `^` 单独表示“父提交” |
+| `<rev>^<n>` | 获取 `<rev>` 的第 `n` 个父提交 | `^` 单独表示「父提交」 |
 | `git stash` | 暂时储藏更改 | 使用 `pop`、`clear` 和 `list` 检索、清除所有、列出储藏的更改 |
 | `git merge-base --all <commit>...` | 获取共同祖先 | |
 | `git restore <path>` | 从提交中恢复文件到工作目录 | 使用 `--source=<tree>` 指定源；另一种解决方案：`git checkout <path>` |
 | `git restore --staged <path>` | 取消暂存 | 另一种解决方案：`git reset HEAD <path>` |
 | `git reset <commit>` | 更改分支的 HEAD 提交 | 选项：`--soft`、`--mixed`、`--hard`、`--merge` 或 `--keep` |
-| `git diff` | 显示差异 | 使用 `--cached` 显示暂存区的差异；可以指定路径 |
 | `git apply <patch>` | 应用补丁 | |
 | `git show <commit>` | 显示提交 | |
 | `git revert <commit>...` | 回退提交 | 使用 `--no-commit` 或 `-n` 避免创建多个提交 |
@@ -685,7 +682,7 @@ git remote rename <old-name> <new-name>
 | `git grep <pattern> <path>...` | 在文件中查找特定内容 | 如果未指定路径，将在整个仓库中搜索 |
 | `git reflog` | 显示引用日志 | |
 
-## 结论
+## 总结
 
 在本文中，我们介绍了 Git 的高级用法，重点介绍了与合并分支相关的命令。希望这篇文章对你在管理多个分支方面有很大帮助。我们将在下一篇文章中介绍子模块的用法。
 

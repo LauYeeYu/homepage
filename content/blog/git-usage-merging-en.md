@@ -1,7 +1,7 @@
 +++
 title = 'Git Advanced Usage: Merging'
 date = 2024-08-06T12:00:00-07:00
-draft = true
+draft = false
 tags = ["git-en", "git", "tutorial", "tutorial-en"]
 showToc = true
 +++
@@ -11,6 +11,12 @@ basic usage of Git. In this article, we will introduce the advanced usage
 on merging branches.
 
 <!--more-->
+
+*This article has other versions in different languages:
+[简体中文 (Simplified Chinese)](/blog-zh-cn/git-usage-merging-zh-cn),
+[繁體中文 (Traditional Chinese)](/blog-zh-hk/git-usage-merging-zh-hk). If you are
+a native speaker of these languages, it is recommended to read
+these versions.*
 
 Using multiple branches, which can make your workflow more flexible and
 efficient, is a common practice in Git. However, it is not easy for a
@@ -486,21 +492,17 @@ the `--soft`, `--mixed`, `--hard`, `--merge`, and `--keep` options mean:
 - `--soft`: Does not touch the index file or the working tree at all (but
   resets the head to `<commit>`, just like all modes do). This leaves all
   your changed files "Changes to be committed", as `git status` would put it.
-
 - `--mixed` (default): Resets the index but not the working tree (i.e., the
   changed files are preserved but not marked for commit) and reports what
   has not been updated.
-
 - `--hard`: Resets the index and working tree. Any changes to tracked files
   in the working tree since `<commit>` are discarded. Any untracked files or
   directories in the way of writing any tracked files are simply deleted.
-
 - `--merge`: Resets the index and updates the files in the working tree that
   are different between `<commit>` and `HEAD`, but keeps those which are
   different between the index and working tree (i.e. which have changes
   which have not been added). If a file that is different between `<commit>`
   and the index has unstaged changes, reset is aborted.
-
 - `--keep`: Resets index entries and updates files in the working tree that
   are different between `<commit>` and `HEAD` and regards all other files
   (including the staged or unstaged) as unstaged[^1]. If a file that is
@@ -811,7 +813,7 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git clone <url>` | Clone an existing repo | The target directory should not exist |
 | `git add <path>` | Add changes in `<path>` to the staging area | Commit will only apply to files added to the staging |
 | `git status` | Check the status of the repo | Recommended to check the status before making a commit |
-| `git diff` | Show the difference in the working directory | Use `--cached` to show difference in the staging area |
+| `git diff` | Show the difference | Use `--cached` to show the difference in the staging area; specify the paths after the commit(s) |
 | `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
 | `git log` | Show the commit history | Use `--oneline` to show every commit in one line; use `--graph` to show commit graph |
 | `git remote add <name> <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
@@ -834,7 +836,6 @@ Now. let's recap the usage introduced in this article and the previous one.
 | `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
 | `git restore --staged <path>` | Unstage files | Alternative solution: `git reset HEAD <path>` |
 | `git reset <commit>` | Change the head commit of a branch | Options: `--soft`, `--mixed`, `--hard`, `--merge`, or `--keep` |
-| `git diff` | Show the difference | Use `--cached` to show the difference in the staging area; specify the paths after the commit(s) |
 | `git apply <patch>` | Apply a patch | |
 | `git show <commit>` | Show a commit | |
 | `git revert <commit>...` | Revert a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
