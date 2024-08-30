@@ -1,8 +1,8 @@
 +++
 title = 'Git 进阶用法：合并分支'
-date = 2024-08-06T12:00:00-07:00
+date = 2024-08-28T12:00:00-07:00
 draft = false
-tags = ["git-zh-cn", "git", "tutorial", "tutorial-zh-cn"]
+tags = ["git", "git-zh-cn", "tutorial", "tutorial-zh-cn"]
 showToc = true
 +++
 

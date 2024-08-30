@@ -1,8 +1,8 @@
 +++
 title = 'Git 基础用法'
-date = 2024-07-28T12:00:00-07:00
+date = 2024-08-05T12:00:00-07:00
 draft = false
-tags = ["git-zh-cn", "git", "tutorial", "tutorial-zh-cn"]
+tags = ["git", "git-zh-cn", "tutorial", "tutorial-zh-cn"]
 showToc = true
 +++
 

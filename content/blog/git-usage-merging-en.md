@@ -1,8 +1,8 @@
 +++
 title = 'Git Advanced Usage: Merging'
-date = 2024-08-06T12:00:00-07:00
+date = 2024-08-28T12:00:00-07:00
 draft = false
-tags = ["git-en", "git", "tutorial", "tutorial-en"]
+tags = ["git", "git-en", "tutorial", "tutorial-en"]
 showToc = true
 +++
 

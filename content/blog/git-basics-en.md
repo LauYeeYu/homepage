@@ -1,8 +1,8 @@
 +++
 title = 'Git Basics - How was Git Designed?'
-date = 2024-07-11T12:00:00-07:00
+date = 2024-07-15T12:00:00-07:00
 draft = false
-tags = ["git-en", "git", "tutorial", "tutorial-en"]
+tags = ["git", "git-en", "tutorial", "tutorial-en"]
 showToc = true
 +++
 
