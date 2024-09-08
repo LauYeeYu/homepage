@@ -100,7 +100,8 @@ key pair. To generate an ssh key pair, run: (**Please replace
 ssh-keygen -t ed25519 -C "someone@example.org"
 ```
 
-> Note: If you are using a system that doesn't support the Ed25519 algorithm,
+> [!NOTE]
+> If you are using a system that doesn't support the Ed25519 algorithm,
 > you can use the RSA algorithm by running: (Also replace
 > `someone@example.org` with your email address!)
 >
@@ -125,7 +126,8 @@ your ssh public key to the service. To get your ssh public key, run:
 cat ~/.ssh/id_ed25519.pub
 ```
 
-> Note: If you are using the RSA algorithm, run:
+> [!NOTE]
+> If you are using the RSA algorithm, run:
 >
 > ```bash
 > cat ~/.ssh/id_rsa.pub

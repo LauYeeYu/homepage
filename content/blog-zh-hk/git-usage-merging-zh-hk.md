@@ -554,7 +554,8 @@ git grep <pattern> <path>...
 
 如果你沒有指定 `<path>`，Git 將在整個倉庫中搜索。`pattern` 與 `grep` 命令中的模式類似。
 
-> 注意：此命令有其他替代方案（例如 [rip-grep][ripgrep]），我們將在接下來的文章中介紹。
+> [!TIP]
+> 此命令有其他替代方案（例如 [rip-grep][ripgrep]），我們將在接下來的文章中介紹。
 
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 

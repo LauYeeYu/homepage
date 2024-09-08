@@ -708,7 +708,8 @@ git grep <pattern> <path>...
 If you don't specify the `<path>`, Git will search in the whole repository.
 The pattern is similar to the pattern in the `grep` command.
 
-> Note: this command has other alternatives, (e.g. [rip-grep][ripgrep]), and
+> [!TIP]
+> This command has other alternatives, (e.g. [rip-grep][ripgrep]), and
 > we will introduce them in the coming articles.
 
 [ripgrep]: https://github.com/BurntSushi/ripgrep

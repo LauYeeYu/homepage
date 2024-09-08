@@ -78,7 +78,8 @@ git config --global user.email "someone@example.org"
 ssh-keygen -t ed25519 -C "someone@example.org"
 ```
 
-> 注意：如果你的系统不支持 Ed25519 算法，你可以使用 RSA 算法执行：（同样，请将
+> [!NOTE]
+> 如果你的系统不支持 Ed25519 算法，你可以使用 RSA 算法执行：（同样，请将
 > `someone@example.org` 替换为你的邮箱地址！）
 >
 > ```bash
@@ -98,7 +99,8 @@ SSH 公钥，请执行：
 cat ~/.ssh/id_ed25519.pub
 ```
 
-> 注意：如果你使用的是 RSA 算法，请执行：
+> [!NOTE]
+> 如果你使用的是 RSA 算法，请执行：
 >
 > ```bash
 > cat ~/.ssh/id_rsa.pub
