@@ -262,6 +262,7 @@ Cons:
 
 ### Resolve Conflicts
 
+> [!TIP]
 > As long as we need to merge, the conflicts will always be there.
 
 When merging branches, Git will tell you if the automatic merge failed,
@@ -347,6 +348,15 @@ the parent of HEAD's parent). The rules are as follows:
   number of parents, then an error will occur). `n` means the `n`th parent
   commit of `<rev>`. For example, `HEAD^` (equivalent to `HEAD^1`) and
   `HEAD^2`.
+
+> [!WARNING]
+> The `^` and `~` might be the special characters of your shell, so you should
+> escape them if either of them is a special character.
+>
+> - In bash, they are not special characters, so you don't need to escape them.
+> - In zsh, `^` is a special character, so you should escape it with `\` or
+>   use single quotation mark to avoid interpolation (e.g., `HEAD\^` or
+>   `'HEAD^'`).
 
 ## Stash
 
