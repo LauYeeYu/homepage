@@ -97,18 +97,143 @@ on the Git submodule.
 
 As a user, you may want to:
 
-- clone the main repository with submodules;
-- initialize the submodules on an existing repository;
+- clone the main repository with submodules (see
+  [Clone Repo with Submodules](#clone-repo-with-submodules));
+- initialize the submodules on an existing repository (see
+  [Initialize or Update Submodules to the Current Commit's Version](#initialize-or-update-submodules-to-the-current-commits-version));
 - update the submodules to the version specified by the current commit (Git
-  will not update the submodules on pull by default);
-- list all the submodules in the repository.
+  will not update the submodules on pull by default) (see
+  [Initialize or Update Submodules to the Current Commit's Version](#initialize-or-update-submodules-to-the-current-commits-version));
+- list all the submodules in the repository (see
+  [List Submodules](#list-submodules)).
 
 ### Developer
 
 As a developer, you may want to:
 
-- add a submodule to the repository;
-- update the submodule to a specific version;
-- remove a submodule from the repository;
-- modify the URL of a submodule;
-- list all the submodules in the repository.
+- add a submodule to the repository (see [Add a Submodule](#add-a-submodule));
+- update the submodule to a specific version (see
+  [Update a Submodule to a Specific Version](#update-a-submodule-to-a-specific-version));
+- remove a submodule from the repository (see
+  [Remove a Submodule](#remove-a-submodule));
+- modify the URL of a submodule (see
+  [Modify the URL of a Submodule](#modify-the-url-of-a-submodule));
+- list all the submodules in the repository (see
+  [List Submodules](#list-submodules)).
+
+## Clone Repo with Submodules
+
+If you are going to clone a repository with submodules, you can add the
+`--recurse-submodules` option to the original parameters:
+
+```bash
+git clone <repo> [dir] --recurse-submodules
+```
+
+## Initialize or Update Submodules to the Current Commit's Version
+
+> [!TIP]
+> If you want to update the submodules on git pull operations, you can use the
+> `--recurse-submodules` option.
+
+If you want to initialize or update the submodules to the version specified
+by the current commit, you can use the following command:
+
+```bash
+git submodule update --init --recursive
+```
+
+This will bring the submodules to the version specified by the current commit
+recursively (i.e., the submodules' submodules will also be updated).
+
+## List Submodules
+
+To list all the submodules in the repository, you can simply use the following
+command:
+
+```bash
+git submodule
+```
+
+## Add a Submodule
+
+To add a submodule to your repository, you can use the following command:
+
+```bash
+git submodule add <repo> [dir]
+```
+
+For the convenience of the users, it is recommended to use `https` protocol
+instead of `ssh` protocol. This will allow users to use the submodule even
+without an account on your Git hosting service. If you want to use the `https`
+for your repo, but `ssh` for your actual development, you may set up a
+URL substitution in Git. For example, if you are using GitHub, you can use
+the following command to set up the substitution when your Git encounters
+the `https` protocol (if you want to apply this rule only to the current
+repository, you can remove the `--global` option):
+
+```bash
+git config --global url.git@github.com:.insteadOf https://github.com/
+```
+
+## Update a Submodule to a Specific Version
+
+As a developer, you may want to change the submodule to a specific version
+in the new commit.
+
+To achieve this, you should
+
+1. enter the submodule;
+2. do the changes similar to the main repository (the aim is to change the
+   `HEAD` to the commit you want);
+3. leave the submodule;
+4. add the changes in the submodule to the main repository (i.e.,
+   `git add <submodule>`).
+5. commit the changes in the main repository.
+
+The operations iin the submdule (step 2) are really similar to the operations
+in the parent repository. The only difference is that you may be at a detached
+`HEAD` state in the submodule.
+
+If you are going to update the submodule to its latest commit, you can use
+the following command in the parent repository:
+
+```bash
+git submodule update --remote
+```
+
+## Remove a Submodule
+
+You may [list the submodules](#list-submodules) first. Then use the following
+command in the parent repository to remove the tracking information:
+
+```bash
+git submodule deinit <path-to-submodule>
+```
+
+After that, remove the submodule directory:
+
+```bash
+git rm <path-to-submodule>
+```
+
+And you should also remove the staged changes for the submodule:
+
+```bash
+git rm --cached <path-to-submodule>
+```
+
+Finally, commit the changes in the parent repository.
+
+## Modify the URL of a Submodule
+
+If you want to modify the URL of a submodule, you should modify the
+`.gitmodules` file in the root directory of the parent repository.
+
+Then, use the following command to update the submodule:
+
+```bash
+git submodule sync
+```
+
+Finally, commit the changes in the parent repository.
