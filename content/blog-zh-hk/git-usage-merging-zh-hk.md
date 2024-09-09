@@ -676,7 +676,7 @@ git remote rename <old-name> <new-name>
 | `git pull` | 從遠程倉庫抓取並合併更改 | 默認的合併策略可能不同 |
 | `.gitignore` | 忽略檔案 | 使用 `.gitignore` 忽略你不想提交的檔案 |
 | `git branch <branch>` | 添加一個新分支 | 新分支名稱不能存在；另一種解決方案：`git checkout -b <branch>` |
-| `git switch <branch>` | 切換到另一個分支 | 另一種解決方案：`git checkout <branch>` |
+| `git switch <branch>` | 切換到另一個分支；對於其他引用，請加上 `--detach` | 另一種解決方案：`git checkout <branch>` |
 | `git merge <branch>` | 合併分支 | 使用 `--ff-only` 強制快進合併；使用 `--squash` 合併但不創建新提交或避免創建合併提交 |
 | `git rebase <branch>` | 重定基底分支 | 使用 `-i` 或 `--interactive` 使用更多功能 |
 | `<rev>~<n>` | 獲取 `<rev>` 的第 `n` 代祖先提交 | |

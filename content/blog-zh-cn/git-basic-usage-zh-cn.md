@@ -459,6 +459,9 @@ git switch <branch-name>
 > git switch dev
 > ```
 
+对于其他引用（例如，标签、提交），你应该在 `git switch` 命令中添加 `--detach`
+选项。这会将你切换到一个分离的 `HEAD` 状态，这意味着你不在任何分支上。
+
 如果你的 Git 版本不支持 `git switch` 命令，你可以执行：
 
 ```bash
@@ -504,7 +507,7 @@ git tag <tag-name>
 | `git pull` | 从远程仓库抓取并合并更改 | 默认的合并策略可能不同 |
 | `.gitignore` | 忽略文件 | 使用 `.gitignore` 忽略你不想提交的文件 |
 | `git branch <branch>` | 添加一个新分支 | 新分支名称不能存在；另一种解决方案：`git checkout -b <branch>` |
-| `git switch <branch>` | 切换到另一个分支 | 另一种解决方案：`git checkout <branch>` |
+| `git switch <branch>` | 切换到另一个分支；对于其他引用，请加上 `--detach` | 另一种解决方案：`git checkout <branch>` |
 
 ## 练习
 
