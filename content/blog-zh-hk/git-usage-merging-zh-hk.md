@@ -404,7 +404,7 @@ git reset [--soft | --mixed | --hard | --merge | --keep] <commit>
 - [顯示工作目錄和某些提交之間的差異](#顯示工作目錄和某些提交之間的差異)
 - [顯示暫存區和某些提交之間的差異](#顯示暫存區和某些提交之間的差異)
 - [顯示提交之間的差異](#顯示提交之間的差異)
-- [生成補丁](#生成補丁)
+- [生成修補檔](#生成修補檔)
 
 ### 顯示工作目錄和某些提交之間的差異
 
@@ -470,27 +470,27 @@ git diff <commit> <commit>
 git diff <commit> <commit> <path>...
 ```
 
-### 生成補丁
+### 生成修補檔
 
-要為任何差異生成補丁，你只需要將前面的情況的輸出重定向到一個檔案。
+要為任何差異生成修補檔，你只需要將前面的情況的輸出重定向到一個檔案。
 
-> 例如，如果你想為當前工作目錄和 `HEAD` 之間的差異生成一個補丁檔案 `patch.diff`，你可以使用以下命令：
+> 例如，如果你想為當前工作目錄和 `HEAD` 之間的差異生成一個修補檔檔案 `patch.diff`，你可以使用以下命令：
 >
 > ```bash
 > git diff > patch.diff
 > ```
 
-在下一部分中，我們將介紹如何應用補丁。
+在下一部分中，我們將介紹如何應用修補檔。
 
-## 應用補丁
+## 應用修補檔
 
-要應用補丁，你可以運行：
+要應用修補檔，你可以運行：
 
 ```bash
 git apply <patch>
 ```
 
-> 例如，如果你想應用 `patch` 目錄中的 `patch.diff` 補丁，你可以使用以下命令：
+> 例如，如果你想應用 `patch` 目錄中的 `patch.diff` 修補檔，你可以使用以下命令：
 >
 > ```bash
 > git apply patch/patch.diff
@@ -687,7 +687,7 @@ git remote rename <old-name> <new-name>
 | `git restore --staged <path>` | 取消暫存 | 另一種解決方案：`git reset HEAD <path>` |
 | `git reset <commit>` | 更改分支的 HEAD 提交 | 選項：`--soft`、`--mixed`、`--hard`、`--merge` 或 `--keep` |
 | `git diff` | 顯示差異 | 使用 `--cached` 顯示暫存區的差異；可以指定路徑 |
-| `git apply <patch>` | 應用補丁 | |
+| `git apply <patch>` | 應用修補檔 | |
 | `git show <commit>` | 顯示提交 | |
 | `git revert <commit>...` | 回退提交 | 使用 `--no-commit` 或 `-n` 避免創建多個提交 |
 | `git cherry-pick <commit>...` | 遴選提交 | 使用 `--no-commit` 或 `-n` 避免創建多個提交 |
