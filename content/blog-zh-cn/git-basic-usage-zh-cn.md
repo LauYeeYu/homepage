@@ -507,7 +507,7 @@ git tag <tag-name>
 | `git pull` | 从远程仓库抓取并合并更改 | 默认的合并策略可能不同 |
 | `.gitignore` | 忽略文件 | 使用 `.gitignore` 忽略你不想提交的文件 |
 | `git branch <branch>` | 添加一个新分支 | 新分支名称不能存在；另一种解决方案：`git checkout -b <branch>` |
-| `git switch <branch>` | 切换到另一个分支；对于其他引用，请加上 `--detach` | 另一种解决方案：`git checkout <branch>` |
+| `git switch <branch>` | 切换到另一个分支 | 对于其他引用，请加上 `--detach`；另一种解决方案：`git checkout <branch>` |
 
 ## 练习
 

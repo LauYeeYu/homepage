@@ -618,7 +618,7 @@ Now, let's recap the basic usage of Git:
 | `git pull` | Fetch and merge changes from the remote repo | The default merging strategy may differ |
 | `.gitignore` | Ignore files | Use `.gitignore` to ignore files you don't want to commit |
 | `git branch <branch>` | Add a new branch | The new branch name should not exist; alternative solution: `git checkout -b <branch>` |
-| `git switch <branch>` | Switch to another branch; use `--detach` for other references | Alternative solution: `git checkout <branch>` |
+| `git switch <branch>` | Switch to another branch | Use `--detach` for other references; alternative solution: `git checkout <branch>` |
 
 ## Drill
 
