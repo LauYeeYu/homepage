@@ -816,7 +816,7 @@ git remote rename <old-name> <new-name>
 
 ## Recap
 
-Now. let's recap the usage introduced in this article and the previous one.
+Now, let's recap the usage introduced in this article and the previous one.
 
 | Command | Description | Note |
 | --- | --- | --- |

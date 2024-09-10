@@ -601,7 +601,7 @@ git tag <tag-name>
 
 ## Recap
 
-Now. let's recap the basic usage of Git:
+Now, let's recap the basic usage of Git:
 
 | Command | Description | Note |
 | --- | --- | --- |
