@@ -46,42 +46,61 @@ However, the Git design principle makes it challenging to manage submodules
 conveniently. Different tools takes different trade-offs. Here are some
 popular tools:
 
-- [Git Submodule][git-submodule]: The official submodule management tool
-  provided by Git.
-
-  Pros:
-  - Every user has git-submodule installed.
-  - Easy for modifiers to use.
-
-  Cons:
-  - Difficult for users to use (need to update or initialize manually).
-  - If the submodule repo is unavailable, you cannot update or initialize
-    the submodule. This makes the repo more of a "centralized" one because
-    it depends on a single URL for each submodule.
-- [Git Subtree][git-subtree]: A project that subprojects to be included
-  within a subdirectory of the main project, optionally including the
-  subproject's entire history.
-
-  Pros:
-  - Easy for read-only users to use.
-  - The submodule included in the repo.
-
-  Cons:
-  - Taking up more space in the main repository.
-  - Difficult for modifiers to use.
-- [Gitslave][gitslave]: A project that assists in assembling a meta-project
-  from a number of individual git repositories which operate as if they were
-  one git repository instead of many.
-
-  Pros:
-  - Really easy for modifiers to use.
-
-  Cons:
-  - Users must install gitslave to use the submodules.
+- [Git Submodule][git-submodule];
+- [Git Subtree][git-subtree];
+- [Gitslave][gitslave].
 
 [git-submodule]: https://git-scm.com/docs/git-submodule
 [git-subtree]: https://github.com/apenwarr/git-subtree
 [gitslave]: https://gitslave.sourceforge.io/
+
+### Git Submodule
+
+Git submodule is the official submodule management tool by Git.
+
+Pros:
+
+- Every user has git-submodule installed.
+- Easy for modifiers to use.
+
+Cons:
+
+- Difficult for users to use (need to update or initialize manually).
+- If the submodule repo is unavailable, you cannot update or initialize
+  the submodule. This makes the repo more of a "centralized" one because
+  it depends on a single URL for each submodule.
+
+### Git Subtree
+
+[Git Subtree][git-subtree] is a project that subprojects to be included
+within a subdirectory of the main project, optionally including the
+subproject's entire history.
+
+Pros:
+
+- Easy for read-only users to use.
+- The submodule included in the repo.
+
+Cons:
+
+- Taking up more space in the main repository.
+- Difficult for modifiers to use.
+
+### Gitslave
+
+[Gitslave][gitslave] is a project that assists in assembling a meta-project
+from a number of individual git repositories which operate as if they were
+one git repository instead of many.
+
+Pros:
+
+- Really easy for modifiers to use.
+
+Cons:
+
+- Users must install gitslave to use the submodules.
+
+### Summary of the Tools
 
 As you can see, all the possible solutions have their disadvantages. For me,
 I think forcing every user to install a tool other than the official Git
@@ -185,15 +204,22 @@ To achieve this, you should
 
 1. enter the submodule;
 2. do the changes similar to the main repository (the aim is to change the
-   `HEAD` to the commit you want);
+   `HEAD` to the commit you want), and please remember to push the changes
+   if the new commit has not been present in the remote repository;
 3. leave the submodule;
 4. add the changes in the submodule to the main repository (i.e.,
    `git add <submodule>`).
-5. commit the changes in the main repository.
+5. commit the changes in the main repository (you can push the changes then).
 
-The operations iin the submdule (step 2) are really similar to the operations
+The operations in the submodule (step 2) are really similar to the operations
 in the parent repository. The only difference is that you may be at a detached
 `HEAD` state in the submodule.
+
+> [!TIP]
+> You can use `--recurse-submodules=on-demand` option for `git push` to push
+> the changes in the submodules on demand, i.e.,
+> `git push --recurse-submodules=on-demand` prevents you from forgetting to
+> push the new commits.
 
 If you are going to update the submodule to its latest commit, you can use
 the following command in the parent repository:
@@ -237,3 +263,62 @@ git submodule sync
 ```
 
 Finally, commit the changes in the parent repository.
+
+## Recap
+
+Now, let's recap the usage introduced in this article and the previous one.
+
+| Command | Description | Note |
+| --- | --- | --- |
+| `git init` | Initialize a new repo | The current directory cannot be a existing repo |
+| `git clone <url>` | Clone an existing repo | The target directory should not exist; use `--recurse-submodules` to clone with submodules ready |
+| `git add <path>` | Add changes in `<path>` to the staging area | Commit will only apply to files added to the staging |
+| `git status` | Check the status of the repo | Recommended to check the status before making a commit |
+| `git diff` | Show the difference | Use `--cached` to show the difference in the staging area; specify the paths after the commit(s) |
+| `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
+| `git log` | Show the commit history | Use `--oneline` to show every commit in one line; use `--graph` to show commit graph |
+| `git remote add <name> <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
+| `git remote show` | List remote repos | Use `-v` to show more details; you may specify the repo by name |
+| `git remote set-url <name> <url>` | Modify the adress of a remote repo | |
+| `git remote remove <name>` | Remove a remote repo | |
+| `git remote rename <old> <new>` | Rename a remote repo | |
+| `git push` | Push changes to the remote repo | If the fast-forward strategy fails, use `--force` to force push (this will discard some commits) |
+| `git fetch` | Fetch changes from the remote repo | Use `git fetch <repo>` if you want to fetch any non-default branch |
+| `git pull` | Fetch and merge changes from the remote repo | The default merging strategy may differ |
+| `.gitignore` | Ignore files | Use `.gitignore` to ignore files you don't want to commit |
+| `git branch <branch>` | Add a new branch | The new branch name should not exist; alternative solution: `git checkout -b <branch>` |
+| `git switch <branch>` | Switch to another branch | Use `--detach` for other references; alternative solution: `git checkout <branch>` |
+| `git merge <commit>...` | Merge branches | Use `--ff-only` to force fast-forward merge; use `--squash` to merge without creating a new commit |
+| `git rebase <commit>` | Rebase branches | Use `-i` or `--interactive` to use more features |
+| `<rev>~<n>` | Get the `<n>`th generation ancestor commit of `<rev>` | |
+| `<rev>^<n>` | Get the `<n>`th parent commit of `rev` | `^` alone means "parent" |
+| `git stash` | Stash changes | Use `pop`, `clear` and `list` to retrieve, clear all, and list stashed changes |
+| `git merge-base --all <commit>...` | Get the common ancestor | |
+| `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
+| `git restore --staged <path>` | Unstage files | Alternative solution: `git reset HEAD <path>` |
+| `git reset <commit>` | Change the head commit of a branch | Options: `--soft`, `--mixed`, `--hard`, `--merge`, or `--keep` |
+| `git apply <patch>` | Apply a patch | |
+| `git show <commit>` | Show a commit | |
+| `git revert <commit>...` | Revert a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
+| `git cherry-pick <commit>...` | Cherry-pick a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
+| `git grep <pattern> <path>...` | Find certain patterns in files | Search the whole repo if path not specified |
+| `git reflog` | Show the reference log | |
+| `git submodule update --init --recursive` | Initialize or update submodules | Use `--recurse-submodules` on pull to update submodules along with the parent repo |
+| `git submodule` | List submodules | |
+| `git submodule add <repo> [dir]` | Add a submodule | Recommended to use `https` instead of `ssh` for the convenience of users |
+| `git submodule update --remote` | Update submodules to the latest commit | |
+| `git submodule deinit <path-to-submodule>` | Remove the tracking information of a submodule | |
+| `git submodule sync` | Update the submodule according to the current `.gitmodules` | |
+
+## Conclusion
+
+In this article, we've introduced the submodule management in Git. In the
+next article, we will cover the miscellaneous topics in Git. Hope you enjoy
+the time with Git!
+
+## Copyright
+
+You may use this article for any purpose as long as the original author
+and link (<https://lau.yeeyu.org/blog/git-usage-submodule-en>) are clearly noted
+at the place you use this article. This copyright notice overrides the
+footnote of the website.
