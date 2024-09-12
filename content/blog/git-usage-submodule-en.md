@@ -1,12 +1,12 @@
 +++
 title = 'Git Advanced Usage: Submodule'
-date = 2024-08-29T12:00:00-07:00
-draft = true
+date = 2024-09-11T12:00:00-07:00
+draft = false
 tags = ["git", "git-en", "tutorial", "tutorial-en"]
 showToc = true
 +++
 
-In the [previous article](/blog/git-basic-usage-en), we've introduced the
+In the [previous article](/blog/git-usage-merging-en), we've introduced the
 Git usage for merging operations. In this article, we will introduce how
 to manage submodules in Git.
 
@@ -60,7 +60,8 @@ Git submodule is the official submodule management tool by Git.
 
 Pros:
 
-- Every user has git-submodule installed.
+- Almost every user has git submodule installed (because this is included in
+  the official project).
 - Easy for modifiers to use.
 
 Cons:
@@ -217,8 +218,8 @@ in the parent repository. The only difference is that you may be at a detached
 
 > [!TIP]
 > You can use `--recurse-submodules=on-demand` option for `git push` to push
-> the changes in the submodules on demand, i.e.,
-> `git push --recurse-submodules=on-demand` prevents you from forgetting to
+> the changes in the submodules on demand, i.e., use
+> `git push --recurse-submodules=on-demand` to prevent you from forgetting to
 > push the new commits.
 
 If you are going to update the submodule to its latest commit, you can use
@@ -266,7 +267,7 @@ Finally, commit the changes in the parent repository.
 
 ## Recap
 
-Now, let's recap the usage introduced in this article and the previous one.
+Now, let's recap the usage introduced in this article and the previous ones.
 
 | Command | Description | Note |
 | --- | --- | --- |
