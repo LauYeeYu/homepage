@@ -182,7 +182,7 @@ git add .
 
 ### 檢查狀態
 
-要查看哪些檔案已添加到暫存區，你可以執行以下命令查看已暫存和未暫存的更改：
+要檢視哪些檔案已添加到暫存區，你可以執行以下命令檢視已暫存和未暫存的更改：
 
 ```bash
 git status
@@ -194,9 +194,9 @@ git status
 `git status` 以獲取一些提示，並了解你的 Git 倉庫的狀態，因此，`git status` 基本是 Git
 中最經常使用的。
 
-### 顯示工作區與當前提交的差異
+### 檢視工作區與當前提交的差異
 
-在提交之前，你可能想查看工作區和當前提交之間的差異。要顯示所有差異，你可以執行：
+在提交之前，你可能想檢視工作區和當前提交之間的差異。要檢視所有差異，你可以執行：
 
 ```bash
 git diff
@@ -204,33 +204,33 @@ git diff
 
 Git 會以高亮顯示的方式顯示每個更改檔案中的差異（以及更改周圍的上下文）。
 
-如果你只想查看特定檔案或目錄中的差異，你可以執行：
+如果你只想檢視特定檔案或目錄中的差異，你可以執行：
 
 ```bash
 git diff <file>...
 ```
 
-> 例如，如果你想查看 `README.md` 檔案和 `src` 目錄中的差異，你可以執行：
+> 例如，如果你想檢視 `README.md` 檔案和 `src` 目錄中的差異，你可以執行：
 >
 > ```bash
 > git diff README.md src
 > ```
 
-### 顯示暫存區中的差異
+### 檢視暫存區中的差異
 
-如果你想查看暫存區和當前提交之間的差異，你可以在 `git diff` 命令中添加 `--cached` 選項：
+如果你想檢視暫存區和當前提交之間的差異，你可以在 `git diff` 命令中添加 `--cached` 選項：
 
 ```bash
 git diff --cached
 ```
 
-如果你只想查看特定檔案或目錄中的差異，你可以執行：
+如果你只想檢視特定檔案或目錄中的差異，你可以執行：
 
 ```bash
 git diff --cached <file>...
 ```
 
-> 例如，如果你想查看 `README.md` 檔案和 `src` 目錄中的差異，你可以執行：
+> 例如，如果你想檢視 `README.md` 檔案和 `src` 目錄中的差異，你可以執行：
 >
 > ```bash
 > git diff --cached README.md src
@@ -268,9 +268,9 @@ git commit -m "Your commit message"
 
 [conventional-commits]: https://www.conventionalcommits.org/
 
-### 顯示提交歷史
+### 檢視提交歷史
 
-要查看提交歷史，你可以執行：
+要檢視提交歷史，你可以執行：
 
 ```bash
 git log
@@ -279,11 +279,11 @@ git log
 你可以使用以下參數：
 
 - `--oneline`：每個提交僅顯示一行；
-- `--graph`：顯示提交關係圖。
+- `--graph`：檢視提交關係圖。
 
 ### 显示提交历史
 
-要查看提交历史，你可以执行：
+要檢視提交历史，你可以执行：
 
 ```bash
 git log
@@ -293,7 +293,6 @@ git log
 
 - `--oneline`：每个提交仅显示一行；
 - `--graph`：显示提交关系图。
-
 
 ### 在 Git 倉庫裡的任何地方使用 Git 子命令
 
@@ -333,7 +332,7 @@ git push --set-upstream origin master
 git push
 ```
 
-將更改推送到遠程倉庫。在執行命令後，仔細查看輸出。如果看到任何錯誤消息，你應該仔細閱讀並嘗試理解錯誤是什麼。除了錯誤消息外，Git
+將更改推送到遠程倉庫。在執行命令後，仔細檢視輸出。如果看到任何錯誤消息，你應該仔細閱讀並嘗試理解錯誤是什麼。除了錯誤消息外，Git
 還會提供一些解決問題的提示。
 
 例如，如果遠程倉庫無法使用快進合併 (fast-forward)
@@ -509,9 +508,9 @@ git tag <tag-name>
 | `git clone <url>` | 複製一個已存在的倉庫 | 目標目錄不能存在 |
 | `git add <path>` | 將 `<path>` 中的更改添加到暫存區 | 提交只會應用於添加到暫存區的檔案 |
 | `git status` | 檢查倉庫的狀態 | 推薦在提交前使用 |
-| `git diff` | 顯示工作區和當前提交之間的差異 | 使用 `--cached` 顯示暫存區的差異 |
+| `git diff` | 檢視工作區和當前提交之間的差異 | 使用 `--cached` 檢視暫存區的差異 |
 | `git commit` | 進行一次提交 | 如果消息很短，使用 `-m`；經常提交（檔案的更改在大多數情況下很容易找回） |
-| `git log` | 顯示提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 顯示提交圖 |
+| `git log` | 檢視提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 檢視提交圖 |
 | `git remote add origin <url>` | 添加一個遠程倉庫 | 遠程倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
 | `git push` | 將更改推送到遠程倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
 | `git fetch` | 從遠程倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |
@@ -519,7 +518,6 @@ git tag <tag-name>
 | `.gitignore` | 忽略檔案 | 使用 `.gitignore` 忽略你不想提交的檔案 |
 | `git branch <branch>` | 添加一個新分支 | 新分支名稱不能存在；另一種解決方案：`git checkout -b <branch>` |
 | `git switch <branch>` | 切換到另一個分支 | 對於其他引用，請加上 `--detach`；另一種解決方案：`git checkout <branch>` |
-
 
 ## 練習
 
@@ -531,7 +529,7 @@ git tag <tag-name>
 
 在一個新目錄中創建一個名為 `my-repo` 的新倉庫。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 創建一個新目錄並進到此目錄。
 2. 執行 `git init`。
@@ -542,7 +540,7 @@ git tag <tag-name>
 
 進行一次初始提交，提交為 `README.txt` 檔案，內容為 `my-repo`。提交訊息為 `initial commit`。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 創建一個名為 `README.txt` 的新檔案，內容為 `my-repo`。
 2. 執行 `git add README.txt`。（你可以執行 `git status` 檢查檔案是否已添加到暫存區。）
@@ -554,7 +552,7 @@ git tag <tag-name>
 
 檢查你的倉庫的狀態。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 執行 `git status`。
 
@@ -566,7 +564,7 @@ git tag <tag-name>
 
 在 GitHub（或任何其他 Git 託管服務）上創建一個**私有**遠程倉庫。然後將遠程倉庫添加到本地倉庫。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 在 GitHub 上創建一個名為 `my-repo` 的新私有倉庫。
 2. 執行 `git remote add origin git@github.com:<your-name>/my-repo.git`。
@@ -577,7 +575,7 @@ git tag <tag-name>
 
 將更改推送到遠程倉庫。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 執行 `git push --set-upstream origin master`。
 
@@ -587,7 +585,7 @@ git tag <tag-name>
 
 創建一個名為 `dev` 的新分支。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 執行 `git branch dev`。
 
@@ -597,7 +595,7 @@ git tag <tag-name>
 
 切換到 `dev` 分支。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 執行 `git switch dev`。
 
@@ -607,7 +605,7 @@ git tag <tag-name>
 
 忽略將 `.log` 後綴的所有檔案。創建 `1.log` 檔案以測試規則是否生效。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 創建一個名為 `.gitignore` 的新檔案。
 2. 在 `.gitignore` 檔案中添加以下行：
@@ -628,7 +626,7 @@ git tag <tag-name>
 
 複製倉庫 `git@github.com:github/gitignore.git`。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 執行 `git clone git@github.com:github/gitignore.git`。
 
@@ -638,7 +636,7 @@ git tag <tag-name>
 
 檢查倉庫的狀態。
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 執行 `git status`。
 
@@ -648,7 +646,7 @@ git tag <tag-name>
 
 抓取遠程倉庫的更改。（遠程倉庫沒有變更是很正常的。）
 
-{{< details summary="點擊查看可行的解決方案" >}}
+{{< details summary="點擊檢視可行的解決方案" >}}
 
 1. 執行 `git fetch`。
 

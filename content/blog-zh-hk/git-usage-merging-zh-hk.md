@@ -191,7 +191,7 @@ git rebase <commit>
 
 在合併分支時，Git 會告訴你是否自動合併失敗。如果自動合併失敗，你必須手動解決衝突。
 
-你可以使用 `git status` 命令查看合併的狀態。在有衝突的檔案中，你會看到類似以下消息：
+你可以使用 `git status` 命令檢視合併的狀態。在有衝突的檔案中，你會看到類似以下消息：
 
 ```plaintext
 <<<<<<< HEAD
@@ -206,7 +206,7 @@ git rebase <commit>
 第一個 `...` 是當前 `HEAD` 的內容；第二個 `...` 是共同祖先的內容；第三個 `...`
 是要合併的內容。
 
-你也可以使用其他工具（例如 [delta 項目][delta-project]）以更直觀的方式來顯示衝突，我們將在接下來的文章中介紹如何配置和使用。
+你也可以使用其他工具（例如 [delta 項目][delta-project]）以更直觀的方式來檢視衝突，我們將在接下來的文章中介紹如何配置和使用。
 
 [delta-project]: https://github.com/dandavison/delta
 
@@ -273,7 +273,7 @@ git rebase <commit>
    git stash
    ```
 
-2. 恢復更改：（你可能需要解決衝突，使用 `git status` 顯示更多信息）
+2. 恢復更改：（你可能需要解決衝突，使用 `git status` 檢視更多信息）
 
    ```bash
     git stash pop
@@ -397,74 +397,74 @@ git reset [--soft | --mixed | --hard | --merge | --keep] <commit>
 > git reset --hard HEAD~
 > ```
 
-## 顯示差異
+## 檢視差異
 
-在 Git 中，有四種常見的顯示差異的情況：
+在 Git 中，有四種常見的檢視差異的情況：
 
-- [顯示工作目錄和某些提交之間的差異](#顯示工作目錄和某些提交之間的差異)
-- [顯示暫存區和某些提交之間的差異](#顯示暫存區和某些提交之間的差異)
-- [顯示提交之間的差異](#顯示提交之間的差異)
+- [檢視工作目錄和某些提交之間的差異](#檢視工作目錄和某些提交之間的差異)
+- [檢視暫存區和某些提交之間的差異](#檢視暫存區和某些提交之間的差異)
+- [檢視提交之間的差異](#檢視提交之間的差異)
 - [生成修補檔](#生成修補檔)
 
-### 顯示工作目錄和某些提交之間的差異
+### 檢視工作目錄和某些提交之間的差異
 
-使用以下命令顯示工作目錄和某些提交之間的差異：
+使用以下命令檢視工作目錄和某些提交之間的差異：
 
 ```bash
 git diff <commit>
 ```
 
-> 例如，如果你想顯示工作目錄和 `feat` 分支之間的差異，你可以使用以下命令：
+> 例如，如果你想檢視工作目錄和 `feat` 分支之間的差異，你可以使用以下命令：
 >
 > ```bash
 > git diff feat
 > ```
 
-特別地，如果你想查看工作目錄和當前 `HEAD` 之間的差異，你可以直接運行：
+特別地，如果你想檢視工作目錄和當前 `HEAD` 之間的差異，你可以直接運行：
 
 ```bash
 git diff
 ```
 
-要顯示某些檔案或目錄的差異，你可以指定它們：
+要檢視某些檔案或目錄的差異，你可以指定它們：
 
 ```bash
 git diff <commit> <path>...
 ```
 
-> 例如，如果你想顯示 `README.txt` 檔案的工作目錄和 `feat`
+> 例如，如果你想檢視 `README.txt` 檔案的工作目錄和 `feat`
 > 分支之間的差異，你可以使用以下命令：
 >
 > ```bash
 > git diff feat README.txt
 > ```
 
-### 顯示暫存區和某些提交之間的差異
+### 檢視暫存區和某些提交之間的差異
 
-使用以下命令顯示暫存區和某些提交之間的差異（與前面的情況類似，只需添加 `--cached` 選項）：
+使用以下命令檢視暫存區和某些提交之間的差異（與前面的情況類似，只需添加 `--cached` 選項）：
 
 ```bash
 git diff --cached <commit>
 ```
 
-與前面的情況類似，你可以省略 `<commit>` 參數以顯示暫存區和當前
-`HEAD` 之間的差異。你也可以指定檔案或目錄以顯示差異。
+與前面的情況類似，你可以省略 `<commit>` 參數以檢視暫存區和當前
+`HEAD` 之間的差異。你也可以指定檔案或目錄以檢視差異。
 
-### 顯示提交之間的差異
+### 檢視提交之間的差異
 
-使用以下命令顯示兩個提交之間的差異：
+使用以下命令檢視兩個提交之間的差異：
 
 ```bash
 git diff <commit> <commit>
 ```
 
-> 例如，如果你想顯示 `master` 和 `feat` 分支之間的差異，你可以使用以下命令：
+> 例如，如果你想檢視 `master` 和 `feat` 分支之間的差異，你可以使用以下命令：
 >
 > ```bash
 > git diff master feat
 > ```
 
-與前面的情況類似，你可以指定檔案或目錄以顯示差異：
+與前面的情況類似，你可以指定檔案或目錄以檢視差異：
 
 ```bash
 git diff <commit> <commit> <path>...
@@ -496,15 +496,15 @@ git apply <patch>
 > git apply patch/patch.diff
 > ```
 
-## 顯示提交
+## 檢視提交
 
-要顯示提交的詳細信息，你可以使用以下命令：
+要檢視提交的詳細信息，你可以使用以下命令：
 
 ```bash
 git show <commit>
 ```
 
-> 例如，如果你想顯示當前 `HEAD` 的父提交的詳細信息，你可以使用以下命令：
+> 例如，如果你想檢視當前 `HEAD` 的父提交的詳細信息，你可以使用以下命令：
 >
 > ```bash
 > git show HEAD~
@@ -567,10 +567,10 @@ git grep <pattern> <path>...
 
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 
-## 顯示引用日志
+## 檢視引用日志
 
 在基本使用文章中，我們提到如果提交了更改，那麼更改可以很容易地被檢索。這是因為 Git
-有一個引用日志，記錄了所有關於提交的更改。你可以使用引用日志查看與提交相關的所有操作。要顯示引用日志，你可以運行：
+有一個引用日志，記錄了所有關於提交的更改。你可以使用引用日志檢視與提交相關的所有操作。要檢視引用日志，你可以運行：
 
 ```bash
 git reflog
@@ -588,7 +588,7 @@ git reflog
 git remote show
 ```
 
-使用 `--verbose` 或 `-v` 選項顯示更多細節：
+使用 `--verbose` 或 `-v` 選項檢視更多細節：
 
 ```bash
 git remote -v show
@@ -600,7 +600,7 @@ git remote -v show
 git remote show <repo>
 ```
 
-> 例如，如果你想顯示 `origin` 倉庫的詳細信息，你可以使用以下命令：
+> 例如，如果你想檢視 `origin` 倉庫的詳細信息，你可以使用以下命令：
 >
 > ```bash
 > git remote show origin
@@ -654,20 +654,17 @@ git remote rename <old-name> <new-name>
 
 現在，讓我們回顧一下本文和前一篇文章中介紹的用法。
 
-## 回顾
-
-现在，让我们回顾一下本文和前一篇文章中介绍的用法。
 | 命令 | 描述 | 備註 |
 | --- | --- | --- |
 | `git init` | 初始化一個新倉庫 | 當前目錄不能是一個已存在的倉庫 |
 | `git clone <url>` | 複製一個已存在的倉庫 | 目標目錄不能存在 |
 | `git add <path>` | 將 `<path>` 中的更改添加到暫存區 | 提交只會應用於添加到暫存區的檔案 |
 | `git status` | 檢查倉庫的狀態 | 推薦在提交前使用 |
-| `git diff` | 顯示差異 | 使用 `--cached` 顯示暫存區的差異；可以指定路徑 |
+| `git diff` | 檢視差異 | 使用 `--cached` 檢視暫存區的差異；可以指定路徑 |
 | `git commit` | 進行一次提交 | 如果消息很短，使用 `-m`；經常提交（檔案的更改在大多數情況下很容易找回） |
-| `git log` | 顯示提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 顯示提交圖 |
+| `git log` | 檢視提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 檢視提交圖 |
 | `git remote add origin <url>` | 添加一個遠程倉庫 | 遠程倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
-| `git remote show` | 列出遠程倉庫 | 使用 `-v` 顯示更多細節；你可以透過名稱指定倉庫 |
+| `git remote show` | 列出遠程倉庫 | 使用 `-v` 檢視更多細節；你可以透過名稱指定倉庫 |
 | `git remote set-url origin <url>` | 修改遠程倉庫地址 | |
 | `git remote remove origin` | 移除遠程倉庫 | |
 | `git remote rename origin new-origin` | 重命名遠程倉庫 | |
@@ -686,13 +683,12 @@ git remote rename <old-name> <new-name>
 | `git restore <path>` | 從提交中恢復檔案到工作目錄 | 使用 `--source=<tree>` 指定源；另一種解決方案：`git checkout <path>` |
 | `git restore --staged <path>` | 取消暫存 | 另一種解決方案：`git reset HEAD <path>` |
 | `git reset <commit>` | 更改分支的 HEAD 提交 | 選項：`--soft`、`--mixed`、`--hard`、`--merge` 或 `--keep` |
-| `git diff` | 顯示差異 | 使用 `--cached` 顯示暫存區的差異；可以指定路徑 |
 | `git apply <patch>` | 應用修補檔 | |
-| `git show <commit>` | 顯示提交 | |
+| `git show <commit>` | 檢視提交 | |
 | `git revert <commit>...` | 回退提交 | 使用 `--no-commit` 或 `-n` 避免創建多個提交 |
 | `git cherry-pick <commit>...` | 遴選提交 | 使用 `--no-commit` 或 `-n` 避免創建多個提交 |
 | `git grep <pattern> <path>...` | 在檔案中查找特定內容 | 如果未指定路徑，將在整個倉庫中搜索 |
-| `git reflog` | 顯示引用日志 | |
+| `git reflog` | 檢視引用日志 | |
 
 ## 總結
 
