@@ -366,6 +366,18 @@ git reset HEAD <path>...
 > git reset HEAD README.txt
 > ```
 
+## 清理工作目录
+
+如果你发现你的工作目录中有很多未跟踪的文件，你可以使用以下命令清理它们：
+
+```bash
+git clean -i
+```
+
+`-i` 选项表示「交互」，这意味着它会提示你是否删除未跟踪的文件。使用 `-i`
+选项时，你也可以指定想要删除的文件。如果你不想使用交互模式，或者你需要在脚本中使用这个命令，你应该去掉这个选项。此外，你可以使用
+`-f` 选项强制删除。
+
 ## 重置分支的 HEAD 提交
 
 有时，我们可能需要将某个分支的 HEAD 提交更改为另一个提交（例如，当前 HEAD 的父提交）。
@@ -683,6 +695,7 @@ git remote rename <old-name> <new-name>
 | `git merge-base --all <commit>...` | 获取共同祖先 | |
 | `git restore <path>` | 从提交中恢复文件到工作目录 | 使用 `--source=<tree>` 指定源；另一种解决方案：`git checkout <path>` |
 | `git restore --staged <path>` | 取消暂存 | 另一种解决方案：`git reset HEAD <path>` |
+| `git clean` | 清理工作目录 | 使用 `-i` 交互模式；使用 `-f` 强制删除 |
 | `git reset <commit>` | 更改分支的 HEAD 提交 | 选项：`--soft`、`--mixed`、`--hard`、`--merge` 或 `--keep` |
 | `git apply <patch>` | 应用补丁 | |
 | `git show <commit>` | 显示提交 | |

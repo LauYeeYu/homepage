@@ -484,6 +484,27 @@ git reset HEAD <path>...
 > git reset HEAD README.txt
 > ```
 
+## Clean the Working Directory
+
+If you find your working directory is full of untracked files, you can clean
+them by using the following command:
+
+```bash
+git clean -i
+```
+
+The `-i` option stand for "interactive", which means it has a prompt to ask
+you whether to delete the untracked files. You can also specify the files
+you want to delete with `-i` option. If you don't want to use the interactive
+mode or you need to use this in a script, you should remove that option. Also,
+you can use `-f` option to force the deletion.
+
+You may also specify the directories you want to delete:
+
+```bash
+git clean -i <path>...
+```
+
 ## Change the Head Commit of a Branch
 
 Sometimes, we may want to change the head commit of a certain branch to
@@ -845,6 +866,7 @@ Now, let's recap the usage introduced in this article and the previous one.
 | `git stash` | Stash changes | Use `pop`, `clear` and `list` to retrieve, clear all, and list stashed changes |
 | `git merge-base --all <commit>...` | Get the common ancestor | |
 | `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
+| `git clean` | Clean the working directory | Use `-i` to use interactive mode; use `-f` to force the deletion |
 | `git restore --staged <path>` | Unstage files | Alternative solution: `git reset HEAD <path>` |
 | `git reset <commit>` | Change the head commit of a branch | Options: `--soft`, `--mixed`, `--hard`, `--merge`, or `--keep` |
 | `git apply <patch>` | Apply a patch | |

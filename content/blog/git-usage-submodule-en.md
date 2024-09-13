@@ -297,6 +297,7 @@ Now, let's recap the usage introduced in this article and the previous ones.
 | `git merge-base --all <commit>...` | Get the common ancestor | |
 | `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
 | `git restore --staged <path>` | Unstage files | Alternative solution: `git reset HEAD <path>` |
+| `git clean` | Clean the working directory | Use `-i` to use interactive mode; use `-f` to force the deletion |
 | `git reset <commit>` | Change the head commit of a branch | Options: `--soft`, `--mixed`, `--hard`, `--merge`, or `--keep` |
 | `git apply <patch>` | Apply a patch | |
 | `git show <commit>` | Show a commit | |

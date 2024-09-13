@@ -239,6 +239,7 @@ git submodule sync
 | `git merge-base --all <commit>...` | 獲取共同祖先 | |
 | `git restore <path>` | 從提交中恢復檔案到工作目錄 | 使用 `--source=<tree>` 指定源；另一種解決方案：`git checkout <path>` |
 | `git restore --staged <path>` | 取消暫存 | 另一種解決方案：`git reset HEAD <path>` |
+| `git clean` | 清理工作目錄 | 使用 `-i` 交互模式；使用 `-f` 強制刪除 |
 | `git reset <commit>` | 更改分支的 HEAD 提交 | 選項：`--soft`、`--mixed`、`--hard`、`--merge` 或 `--keep` |
 | `git apply <patch>` | 應用修補檔 | |
 | `git show <commit>` | 檢視提交 | |
