@@ -178,3 +178,166 @@ If you want to move a file, this is actually equivalent to renaming the file.
 You can move the file and add the common ancestor directory of the old and new
 one to allow git to track this change. On commit, Git will try to find the
 renaming relationship (but sometimes it may fail or have a wrong result).
+
+## Git Alias
+
+Are you fed up with typing `git commit --amend` or
+`git pull --recurse-submodules` all the time? You can create an alias for the
+long commands that you often use or the commands that is hard to remember.
+
+Git alias allows you to create a shorthand for a long command.For example,
+you can set `amend` as an alias for `commit --amend`, then `git amend` will
+be equivalent to `git commit --amend`. This is similar to the alias in the
+shell.
+
+Git alias can be configured either with a command or by editing the
+configuration file (`~/.gitconfig`). It is more recommended to use the
+command to configure the alias.
+
+To set an alias with a command, you can use the following command:
+
+```bash
+git config --global alias.<alias-name> <command>
+```
+
+If you want to set the alias for the current repository only, you should
+remove the `--global` option.
+
+Here are some aliases that I recommend:
+
+1. `amend`: amend the last commit
+
+    ```bash
+    git config --global alias.amend 'commit --amend'
+    ```
+
+2. `unstage`: unstage a file
+
+    ```bash
+    git config --global alias.unstage 'reset HEAD --'
+    ```
+
+3. `full-pull`: pull with submodules
+
+    ```bash
+    git config --global alias.full-pull 'pull --recurse-submodules'
+    ```
+
+4. `full-push`: push with submodules
+
+    ```bash
+    git config --global alias.full-push 'push --recurse-submodules=on-demand'
+    ```
+
+5. `log-graph`: show the log with a graph one line per commit
+
+    ```bash
+    git config --global alias.log-graph 'log --graph --oneline --decorate'
+    ```
+
+6. `fpush`: force push (often used after amending a commit)
+  
+      ```bash
+      git config --global alias.fpush 'push --force'
+      ```
+
+## Useful Third-party Tools
+
+Here I recommend some third-party tools that I think are really useful.
+You can install them if that helps you a lot. Also, it's okay if you don't
+install them, as Git itself is already powerful enough.
+
+### Git Delta
+
+[Git Delta][git-delta] offers you a clear and intuitive view of the changes.
+It improves the readability of the diff output dramatically. It can also
+identify merge conflicts. With Git Delta configured, you are all set. The
+output of `git diff` will be fascinating. Also, don't worry about the patch
+format, as it only affects the output when displayed, and when you are
+generating a patch, Git will still use the original format.
+
+[git-delta]: https://dandavison.github.io/
+
+Git Delta can be applied to `diff`, `blame`, `grep` and `show` commands.
+
+### Git Searching Tools
+
+There are some tools that can help you search in the Git repository, instead
+of using `git grep`. The [ripgrep (rg)][ripgrep] and
+[the silver searcher(ag)][ag] are two of them.
+
+[ripgrep]: https://github.com/BurntSushi/ripgrep
+[ag]: https://github.com/ggreer/the_silver_searcher
+
+## Recap
+
+Now, let's recap the usage introduced in all the Git tutorial articles (Yes,
+this is the last one). The following table should be really helpful and
+efficient for you to find the command you need (some command might be omitted
+if they are not used frequently, e.g., alias commands).
+
+| Command | Description | Note |
+| --- | --- | --- |
+| `git init` | Initialize a new repo | The current directory cannot be a existing repo |
+| `git clone <url>` | Clone an existing repo | The target directory should not exist; use `--recurse-submodules` to clone with submodules ready |
+| `git add <path>` | Add changes in `<path>` to the staging area | Commit will only apply to files added to the staging |
+| `git status` | Check the status of the repo | Recommended to check the status before making a commit |
+| `git diff` | Show the difference | Use `--cached` to show the difference in the staging area; specify the paths after the commit(s) |
+| `git commit` | Make a commit | Use `-m` if the message is short; commit often (changes in files can be retrieved easily in most cases) |
+| `git log` | Show the commit history | Use `--oneline` to show every commit in one line; use `--graph` to show commit graph |
+| `git remote add <name> <url>` | Add a remote repo | The default name for the remote repo is `origin`; you might need to following the instructions on first push (e.g., `git push --set-upstream origin master`) |
+| `git remote show` | List remote repos | Use `-v` to show more details; you may specify the repo by name |
+| `git remote set-url <name> <url>` | Modify the adress of a remote repo | |
+| `git remote remove <name>` | Remove a remote repo | |
+| `git remote rename <old> <new>` | Rename a remote repo | |
+| `git push` | Push changes to the remote repo | If the fast-forward strategy fails, use `--force` to force push (this will discard some commits) |
+| `git fetch` | Fetch changes from the remote repo | Use `git fetch <repo>` if you want to fetch any non-default branch |
+| `git pull` | Fetch and merge changes from the remote repo | The default merging strategy may differ |
+| `.gitignore` | Ignore files | Use `.gitignore` to ignore files you don't want to commit |
+| `git branch <branch>` | Add a new branch | The new branch name should not exist; alternative solution: `git checkout -b <branch>` |
+| `git switch <branch>` | Switch to another branch | Use `--detach` for other references; alternative solution: `git checkout <branch>` |
+| `git merge <commit>...` | Merge branches | Use `--ff-only` to force fast-forward merge; use `--squash` to merge without creating a new commit |
+| `git rebase <commit>` | Rebase branches | Use `-i` or `--interactive` to use more features |
+| `<rev>~<n>` | Get the `<n>`th generation ancestor commit of `<rev>` | |
+| `<rev>^<n>` | Get the `<n>`th parent commit of `rev` | `^` alone means "parent" |
+| `git stash` | Stash changes | Use `pop`, `clear` and `list` to retrieve, clear all, and list stashed changes |
+| `git merge-base --all <commit>...` | Get the common ancestor | |
+| `git restore <path>` | Restore files from commits | Use `--source=<tree>` to restore from commits other than `HEAD`; alternative solution: `git checkout <path>` |
+| `git restore --staged <path>` | Unstage files | Alternative solution: `git reset HEAD <path>` |
+| `git clean` | Clean the working directory | Use `-i` to use interactive mode; use `-f` to force the deletion |
+| `git reset <commit>` | Change the head commit of a branch | Options: `--soft`, `--mixed`, `--hard`, `--merge`, or `--keep` |
+| `git apply <patch>` | Apply a patch | |
+| `git show <commit>` | Show a commit | |
+| `git revert <commit>...` | Revert a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
+| `git cherry-pick <commit>...` | Cherry-pick a commit | Use `--no-commit` or `-n` to avoid creating multiple commits |
+| `git grep <pattern> <path>...` | Find certain patterns in files | Search the whole repo if path not specified |
+| `git reflog` | Show the reference log | |
+| `git submodule update --init --recursive` | Initialize or update submodules | Use `--recurse-submodules` on pull to update submodules along with the parent repo |
+| `git submodule` | List submodules | |
+| `git submodule add <repo> [dir]` | Add a submodule | Recommended to use `https` instead of `ssh` for the convenience of users |
+| `git submodule update --remote` | Update submodules to the latest commit | |
+| `git submodule deinit <path-to-submodule>` | Remove the tracking information of a submodule | |
+| `git submodule sync` | Update the submodule according to the current `.gitmodules` | |
+| `git tag <tag-name>` | Add a lightweight tag | |
+| `git tag -a <tag-name> -m <message>` | Add an annotated tag | |
+| `git push --tags` | Push tags | |
+| `git tag -l` | List tags | |
+| `git tag -d <tag-name>` | Delete a local tag | |
+| `git push --delete <remote> <tag-name>` | Delete a remote tag | |
+| File permission | executable: `755`, non-executable: `644` | |
+
+## Conclusion
+
+In this article, we've introduced some other usage of Git that you should
+know. We've covered tags, file permissions, symbolic links, files and
+directories, renaming a file, Git alias, and some useful third-party tools.
+This is the last article in the Git tutorial series. In the future, I may
+write some other articles that will dig deeper into Git. I hope you've
+learned something useful from this series and enjoy your time with Git.
+
+## Copyright
+
+You may use this article for any purpose as long as the original author
+and link (<https://lau.yeeyu.org/blog/git-usage-misc-en>) are clearly noted
+at the place you use this article. This copyright notice overrides the
+footnote of the website.
