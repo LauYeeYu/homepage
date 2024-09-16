@@ -1,7 +1,7 @@
 +++
 title = 'Git Advanced Usage: Miscellaneous'
-date = 2024-09-11T12:00:00-07:00
-draft = true
+date = 2024-09-15T12:00:00-07:00
+draft = false
 tags = ["git", "git-en", "tutorial", "tutorial-en"]
 showToc = true
 +++
@@ -92,7 +92,7 @@ Also, you can omit the commit ID to point to the latest commit.
 ### Push a Tag
 
 By default, the tag will not be pushed in the `git push` command. If you want
-to push the tag, you should add `--tag` in your `git push` command. For
+to push the tag, you should add `--tags` in your `git push` command. For
 example:
 
 ```bash
@@ -158,11 +158,11 @@ the place it points to. If the place is not valid, then it will be a broken
 symbolic link, but this won't cause any problem itself.
 
 Git supports symbolic links, but it may not work as expected if it is
-pointing to something outside the repository. Therefore, you should avoid using
-symbolic links outside the repository. Also, on Windows, symbolic links are
-not supported well, so my suggestion is to avoid using symbolic links except
-that you are sure that it won't cause any problem, e.g., you only use it on
-Linux and points to a file in the repository.
+pointing to something outside the repository. Therefore, you should avoid
+using symbolic links pointing to something outside the repository. Also, on
+Windows, symbolic links are not supported well, so my suggestion is to avoid
+using symbolic links except that you are sure that it won't cause any
+problem, e.g., you only use it on Linux and points to a file in the repository.
 
 ## Files and Directories
 
@@ -211,7 +211,7 @@ Here are some aliases that I recommend:
     git config --global alias.amend 'commit --amend'
     ```
 
-2. `unstage`: unstage a file
+2. `unstage`: unstage files
 
     ```bash
     git config --global alias.unstage 'reset HEAD --'
@@ -324,7 +324,7 @@ if they are not used frequently, e.g., alias commands).
 | `git tag -l` | List tags | |
 | `git tag -d <tag-name>` | Delete a local tag | |
 | `git push --delete <remote> <tag-name>` | Delete a remote tag | |
-| File permission | executable: `755`, non-executable: `644` | |
+| File permission | executable (`755`) and non-executable (`644`) | |
 
 ## Conclusion
 
