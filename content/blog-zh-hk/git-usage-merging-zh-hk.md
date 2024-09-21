@@ -72,7 +72,7 @@ git merge <commit>...
 
 - `<commit>` 參數可以是提交雜湊值或任何提交的引用。
 - 要合併的提交數量可以是多個。
-- 如果沒有指定提交，Git 將合併當前分支的遠程跟踪分支。
+- 如果沒有指定提交，Git 將合併當前分支的遠端跟踪分支。
 - 使用 `--ff-only` 選項來強制快進合併（例如，`git merge --ff-only feat`）。
 - 使用 `--squash` 選項（例如，`git merge --squash feat`）以實現合併但不創建新提交或避免創建合併提交（也就是有多個父提交）。
 
@@ -155,7 +155,7 @@ git rebase <commit>
 請注意：
 
 - `<commit>` 參數可以是提交雜湊值或任何提交的引用。
-- 如果沒有指定提交，Git 將重定基底當前分支的遠程跟踪分支。
+- 如果沒有指定提交，Git 將重定基底當前分支的遠端跟踪分支。
 - 如果發生衝突，你應該解決衝突，然後使用 `git rebase --continue` 繼續重定基底操作。我們將在本文後面討論如何解決衝突。
 
 如果你想使用更多功能，你可以使用 `-i` 或 `--interactive` 選項。這將打開一個編輯器，允許你執行以下操作：
@@ -588,13 +588,13 @@ git grep <pattern> <path>...
 git reflog
 ```
 
-## 管理遠程倉庫
+## 管理遠端倉庫
 
-在基本使用文章中，我們介紹了如何添加遠程倉庫。在這裡，我們將介紹更多的命令來管理遠程倉庫。
+在基本使用文章中，我們介紹了如何添加遠端倉庫。在這裡，我們將介紹更多的命令來管理遠端倉庫。
 
-### 列出遠程倉庫
+### 列出遠端倉庫
 
-要列出所有遠程倉庫，你可以使用以下命令：
+要列出所有遠端倉庫，你可以使用以下命令：
 
 ```bash
 git remote show
@@ -606,7 +606,7 @@ git remote show
 git remote -v show
 ```
 
-要列出特定的遠程倉庫，你可以運行：
+要列出特定的遠端倉庫，你可以運行：
 
 ```bash
 git remote show <repo>
@@ -618,45 +618,45 @@ git remote show <repo>
 > git remote show origin
 > ```
 
-### 添加新的遠程倉庫
+### 添加新的遠端倉庫
 
-這已經在基本使用文章中介紹過了。使用以下命令添加新的遠程倉庫：
+這已經在基本使用文章中介紹過了。使用以下命令添加新的遠端倉庫：
 
 ```bash
 git remote add <name> <url>
 ```
 
-### 移除遠程倉庫
+### 移除遠端倉庫
 
-要移除遠程倉庫，你可以使用以下命令：
+要移除遠端倉庫，你可以使用以下命令：
 
 ```bash
 git remote remove <name>
 ```
 
-> 例如，如果你想移除 `origin` 遠程倉庫，你可以使用以下命令：
+> 例如，如果你想移除 `origin` 遠端倉庫，你可以使用以下命令：
 >
 > ```bash
 > git remote remove origin
 > ```
 
-### 修改遠程倉庫地址
+### 修改遠端倉庫地址
 
-要修改遠程倉庫地址，你可以使用以下命令：
+要修改遠端倉庫地址，你可以使用以下命令：
 
 ```bash
 git remote set-url <name> <url>
 ```
 
-> 例如，如果你想將 `origin` 遠程倉庫修改為 `git@github.com:github/gitignore.git`，你可以執行以下命令：
+> 例如，如果你想將 `origin` 遠端倉庫修改為 `git@github.com:github/gitignore.git`，你可以執行以下命令：
 >
 > ```bash
 > git remote set-url origin git@github.com:github/gitignore.git
 > ```
 
-### 重命名遠程倉庫
+### 重命名遠端倉庫
 
-要重命名遠程倉庫，你可以使用以下命令：
+要重命名遠端倉庫，你可以使用以下命令：
 
 ```bash
 git remote rename <old-name> <new-name>
@@ -675,14 +675,14 @@ git remote rename <old-name> <new-name>
 | `git diff` | 檢視差異 | 使用 `--cached` 檢視暫存區的差異；可以指定路徑 |
 | `git commit` | 進行一次提交 | 如果消息很短，使用 `-m`；經常提交（檔案的更改在大多數情況下很容易找回） |
 | `git log` | 檢視提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 檢視提交圖 |
-| `git remote add origin <url>` | 添加一個遠程倉庫 | 遠程倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
-| `git remote show` | 列出遠程倉庫 | 使用 `-v` 檢視更多細節；你可以透過名稱指定倉庫 |
-| `git remote set-url origin <url>` | 修改遠程倉庫地址 | |
-| `git remote remove origin` | 移除遠程倉庫 | |
-| `git remote rename origin new-origin` | 重命名遠程倉庫 | |
-| `git push` | 將更改推送到遠程倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
-| `git fetch` | 從遠程倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |
-| `git pull` | 從遠程倉庫抓取並合併更改 | 默認的合併策略可能不同 |
+| `git remote add origin <url>` | 添加一個遠端倉庫 | 遠端倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
+| `git remote show` | 列出遠端倉庫 | 使用 `-v` 檢視更多細節；你可以透過名稱指定倉庫 |
+| `git remote set-url origin <url>` | 修改遠端倉庫地址 | |
+| `git remote remove origin` | 移除遠端倉庫 | |
+| `git remote rename origin new-origin` | 重命名遠端倉庫 | |
+| `git push` | 將更改推送到遠端倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
+| `git fetch` | 從遠端倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |
+| `git pull` | 從遠端倉庫抓取並合併更改 | 默認的合併策略可能不同 |
 | `.gitignore` | 忽略檔案 | 使用 `.gitignore` 忽略你不想提交的檔案 |
 | `git branch <branch>` | 添加一個新分支 | 新分支名稱不能存在；另一種解決方案：`git checkout -b <branch>` |
 | `git switch <branch>` | 切換到另一個分支 | 對於其他引用，請加上 `--detach`；另一種解決方案：`git checkout <branch>` |

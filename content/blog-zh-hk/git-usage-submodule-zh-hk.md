@@ -155,7 +155,7 @@ git config --global url.git@github.com:.insteadOf https://github.com/
 為了實現這一目的，你應該：
 
 1. 進入子模塊；
-2. 進行類似主倉庫的更改（目的是將 `HEAD` 更改到你想要的提交），請記住如果新提交尚未出現在遠程倉庫中，請推送更改；
+2. 進行類似主倉庫的更改（目的是將 `HEAD` 更改到你想要的提交），請記住如果新提交尚未出現在遠端倉庫中，請推送更改；
 3. 離開子模塊；
 4. 將子模塊中的更改添加到主倉庫中（即，`git add <submodule>`）；
 5. 提交主倉庫中的更改（你可以推送更改）。
@@ -220,14 +220,14 @@ git submodule sync
 | `git diff` | 檢視差異 | 使用 `--cached` 檢視暫存區的差異；可以指定路徑 |
 | `git commit` | 進行一次提交 | 如果消息很短，使用 `-m`；經常提交（檔案的更改在大多數情況下很容易找回） |
 | `git log` | 檢視提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 檢視提交圖 |
-| `git remote add origin <url>` | 添加一個遠程倉庫 | 遠程倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
-| `git remote show` | 列出遠程倉庫 | 使用 `-v` 檢視更多細節；你可以透過名稱指定倉庫 |
-| `git remote set-url origin <url>` | 修改遠程倉庫地址 | |
-| `git remote remove origin` | 移除遠程倉庫 | |
-| `git remote rename origin new-origin` | 重命名遠程倉庫 | |
-| `git push` | 將更改推送到遠程倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
-| `git fetch` | 從遠程倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |
-| `git pull` | 從遠程倉庫抓取並合併更改 | 默認的合併策略可能不同 |
+| `git remote add origin <url>` | 添加一個遠端倉庫 | 遠端倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
+| `git remote show` | 列出遠端倉庫 | 使用 `-v` 檢視更多細節；你可以透過名稱指定倉庫 |
+| `git remote set-url origin <url>` | 修改遠端倉庫地址 | |
+| `git remote remove origin` | 移除遠端倉庫 | |
+| `git remote rename origin new-origin` | 重命名遠端倉庫 | |
+| `git push` | 將更改推送到遠端倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
+| `git fetch` | 從遠端倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |
+| `git pull` | 從遠端倉庫抓取並合併更改 | 默認的合併策略可能不同 |
 | `.gitignore` | 忽略檔案 | 使用 `.gitignore` 忽略你不想提交的檔案 |
 | `git branch <branch>` | 添加一個新分支 | 新分支名稱不能存在；另一種解決方案：`git checkout -b <branch>` |
 | `git switch <branch>` | 切換到另一個分支 | 對於其他引用，請加上 `--detach`；另一種解決方案：`git checkout <branch>` |
