@@ -99,15 +99,15 @@ git tag -d <tag-name>
 > git tag -d v1.0.0
 > ```
 
-### 刪除遠程標籤
+### 刪除遠端標籤
 
-你可以使用以下命令刪除遠程標籤：
+你可以使用以下命令刪除遠端標籤：
 
 ```bash
 git push --delete <remote-name> <tag-name>
 ```
 
-> 例如，如果你想刪除遠程倉庫 `origin` 中的 `v1.0.0` 標籤，你可以使用以下命令：
+> 例如，如果你想刪除遠端倉庫 `origin` 中的 `v1.0.0` 標籤，你可以使用以下命令：
 >
 > ```bash
 > git push --delete origin v1.0.0
@@ -196,6 +196,29 @@ git config --global alias.<alias-name> <command>
     git config --global alias.fpush 'push --force'
     ```
 
+## 全局 Git Ignore
+
+每個作業系統可能都有一些自動生成的檔案，你不想將它們包含在倉庫中，比如
+macOS 中臭名昭著的 `.DS_Store`。在每個倉庫中添加這些檔案到
+`.gitignore` 中真的很麻煩，對你和你的團隊成員來說都是如此。對於你來說，你需要每次創建一個新倉庫時都這樣做。對於你的團隊成員來說，如果他們不使用相同的作業系統，這很可能是不必要的。
+
+Git 允許你設置一個全局檔案來忽略檔案。它在 `core.excludesFile`
+變量中配置。你可以使用以下命令設置它：
+
+```bash
+git config --global core.excludesFile <path>
+```
+
+如果你不設置 `core.excludesFile`，默認值是 `$XDG_CONFIG_HOME/git/ignore`
+（如果沒有設置 `$XDG_CONFIG_HOME`，那麼會採用
+`$HOME/.config/git/ignore`）。這可能不會在 Windows 或 macOS 上生效。
+
+> [!TIP]
+> GitHub 的官方 `.gitignore` 模板提供了很多系統特定的 `.gitignore`
+> 檔案（例如，`Global` 目錄中的檔案）。你可以在[GitHub gitignore 倉庫][gitignore]中找到它們。
+
+[gitignore]: https://github.com/github/gitignore
+
 ## 實用第三方工具
 
 在這裡，我會推薦一些我認為非常有用的第三方工具。如果它們對你有很大幫助，你可以安裝它們。當然，不安裝它們也不會有什麼關係，因為 Git 本身已經足夠強大了。
@@ -232,14 +255,14 @@ Git Delta 可以應用於 `diff`、`blame`、`grep` 和 `show` 等命令。
 | `git diff` | 檢視差異 | 使用 `--cached` 檢視暫存區的差異；可以指定路徑 |
 | `git commit` | 進行一次提交 | 如果消息很短，使用 `-m`；經常提交（檔案的更改在大多數情況下很容易找回） |
 | `git log` | 檢視提交歷史 | 使用 `--oneline` 讓每個提交僅佔用一行；使用 `--graph` 檢視提交圖 |
-| `git remote add origin <url>` | 添加一個遠程倉庫 | 遠程倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
-| `git remote show` | 列出遠程倉庫 | 使用 `-v` 檢視更多細節；你可以透過名稱指定倉庫 |
-| `git remote set-url origin <url>` | 修改遠程倉庫地址 | |
-| `git remote remove origin` | 移除遠程倉庫 | |
-| `git remote rename origin new-origin` | 重命名遠程倉庫 | |
-| `git push` | 將更改推送到遠程倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
-| `git fetch` | 從遠程倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |
-| `git pull` | 從遠程倉庫抓取並合併更改 | 默認的合併策略可能不同 |
+| `git remote add origin <url>` | 添加一個遠端倉庫 | 遠端倉庫的默認名稱是 `origin`；你可能需要遵循第一次推送時的指示（例如，`git push --set-upstream origin master`） |
+| `git remote show` | 列出遠端倉庫 | 使用 `-v` 檢視更多細節；你可以透過名稱指定倉庫 |
+| `git remote set-url origin <url>` | 修改遠端倉庫地址 | |
+| `git remote remove origin` | 移除遠端倉庫 | |
+| `git remote rename origin new-origin` | 重命名遠端倉庫 | |
+| `git push` | 將更改推送到遠端倉庫 | 如果快進合併策略失敗，使用 `--force` 強制推送（這會丟棄一些提交） |
+| `git fetch` | 從遠端倉庫抓取更改 | 如果你想抓取非默認分支，使用 `git fetch <repo>` |
+| `git pull` | 從遠端倉庫抓取並合併更改 | 默認的合併策略可能不同 |
 | `.gitignore` | 忽略檔案 | 使用 `.gitignore` 忽略你不想提交的檔案 |
 | `git branch <branch>` | 添加一個新分支 | 新分支名稱不能存在；另一種解決方案：`git checkout -b <branch>` |
 | `git switch <branch>` | 切換到另一個分支 | 對於其他引用，請加上 `--detach`；另一種解決方案：`git checkout <branch>` |
@@ -270,7 +293,7 @@ Git Delta 可以應用於 `diff`、`blame`、`grep` 和 `show` 等命令。
 | `git push --tags` | 推送標籤 | |
 | `git tag -l` | 列出標籤 | |
 | `git tag -d <tag-name>` | 刪除本地標籤 | |
-| `git push --delete <remote> <tag-name>` | 刪除遠程標籤 | |
+| `git push --delete <remote> <tag-name>` | 刪除遠端標籤 | |
 | 檔案權限 | 可執行（`755`）和不可執行（`644`） | |
 
 ## 總結

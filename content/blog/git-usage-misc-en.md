@@ -241,6 +241,34 @@ Here are some aliases that I recommend:
       git config --global alias.fpush 'push --force'
       ```
 
+## Global Git Ignore
+
+Every operating system may have some automatically generated files that you
+don't want to include it in the repository, say, the notorious `.DS_Store` in
+macOS. Adding these files to `.gitignore` in every repository is really
+annoying both for you and your team members. For you, you need to do this
+every time you create a new repository. For your team members, this may be
+unnecessary if they don't use the same operating system.
+
+Instead, Git allows you to set a global file to ignore files. It is
+configured in the `core.excludesFile` variable. You can set it by using the
+following command:
+
+```bash
+git config --global core.excludesFile <path>
+```
+
+The default value is `$XDG_CONFIG_HOME/git/ignore` (if `$XDG_CONFIG_HOME` is not
+set, then use `$HOME/.config/git/ignore`) if you don't set `core.excludesFile`.
+(This may not take effect on Windows or macOS.)
+
+> [!TIP]
+> GitHub's official `.gitignore` templates provides a lot of system-specific
+> `.gitignore` files (e.g., the files in the `Global` directory). You can
+> find them at the [GitHub gitignore repository][gitignore].
+
+[gitignore]: https://github.com/github/gitignore
+
 ## Useful Third-party Tools
 
 Here I recommend some third-party tools that I think are really useful.

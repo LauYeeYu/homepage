@@ -196,6 +196,29 @@ git config --global alias.<alias-name> <command>
     git config --global alias.fpush 'push --force'
     ```
 
+## 全局 Git Ignore
+
+每个操作系统可能都有一些自动生成的文件，你不想将它们包含在仓库中，比如
+macOS 中臭名昭著的 `.DS_Store`。在每个仓库中添加这些文件到
+`.gitignore` 中真的很麻烦，对你和你的团队成员来说都是如此。对于你来说，你需要每次创建一个新仓库时都这样做。对于你的团队成员来说，如果他们不使用相同的操作系统，这很可能是不必要的。
+
+Git 允许你设置一个全局文件来忽略文件。它在 `core.excludesFile`
+变量中配置。你可以使用以下命令设置它：
+
+```bash
+git config --global core.excludesFile <path>
+```
+
+如果你不设置 `core.excludesFile`，默认值是 `$XDG_CONFIG_HOME/git/ignore`
+（如果没有设置 `$XDG_CONFIG_HOME`，那么会采用
+`$HOME/.config/git/ignore`）。这可能不会在 Windows 或 macOS 上生效。
+
+> [!TIP]
+> GitHub 的官方 `.gitignore` 模板提供了很多系统特定的 `.gitignore`
+> 文件（例如，`Global` 目录中的文件）。你可以在[GitHub gitignore 仓库][gitignore]中找到它们。
+
+[gitignore]: https://github.com/github/gitignore
+
 ## 实用第三方工具
 
 在这里，我会推荐一些我认为非常有用的第三方工具。如果它们对你有很大帮助，你可以安装它们。当然，不安装它们也不会有什么关系，因为 Git 本身已经足够强大了。
