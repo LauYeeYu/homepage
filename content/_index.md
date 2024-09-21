@@ -1,7 +1,6 @@
 ## Biography
 
-I am Yiyu Liu (“Liu” is my family name, you may pronounce my family name as
-“Leo” and my given name as “Yee Yu”), an undergraduate at
+I am Yiyu Liu, an undergraduate at
 [ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity(SJTU)][sjtu].
 Currently, I am fortunate to work with Prof. [Baris Kasikci][baris] as a
 research intern in the Paul G. Allen School of Computer Science & Engineering
