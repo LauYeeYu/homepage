@@ -3,6 +3,7 @@ title = 'Git 進階用法：子模塊'
 date = 2024-09-11T12:00:00-07:00
 draft = false
 tags = ["git", "git-zh-hk", "tutorial", "tutorial-zh-hk"]
+series = "Git 4/5"
 showToc = true
 +++
 

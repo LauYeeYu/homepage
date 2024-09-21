@@ -3,6 +3,7 @@ title = 'Git Advanced Usage: Merging'
 date = 2024-08-28T12:00:00-07:00
 draft = false
 tags = ["git", "git-en", "tutorial", "tutorial-en"]
+series = "Git 3/5"
 showToc = true
 +++
 
