@@ -270,6 +270,28 @@ set, then use `$HOME/.config/git/ignore`) if you don't set `core.excludesFile`.
 
 [gitignore]: https://github.com/github/gitignore
 
+## Git Garbage Collection
+
+> [!WARNING]
+> Git garbage collection will remove all unreferenced objects (e.g., commits
+> that is deprecated because of a rebase or amend). After garbage collection,
+> you cannot recover these objects. Therefore, you should be careful when
+> using garbage collection. Generally speaking, you should not use garbage
+> collection on your own projects; use it only for others' projects or when
+> you are sure that you don't need the unreferenced objects.
+
+Git will keep all the objects, even though they are not referenced by any
+branches or tags. As I said before, committed files can be retrieved easily
+in most situations. However, this will take up a lot of space in the `.git`
+directory. Hence, Git allows you to free up the space through garbage
+collection when you want to remove these unreferenced objects.
+
+To run garbage collection, you can use the following command:
+
+```bash
+git gc
+```
+
 ## Useful Third-party Tools
 
 Here I recommend some third-party tools that I think are really useful.
@@ -354,6 +376,7 @@ if they are not used frequently, e.g., alias commands).
 | `git tag -d <tag-name>` | Delete a local tag | |
 | `git push --delete <remote> <tag-name>` | Delete a remote tag | |
 | File permission | executable (`755`) and non-executable (`644`) | |
+| `git gc` | Run garbage collection | All unreferenced objects will be removed, and not retrievable afterwards |
 
 ## Conclusion
 
