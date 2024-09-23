@@ -6,6 +6,10 @@ theme = "soho"
 copyright = "Yiyu Liu"
 googleAnalytics = "G-8RHH1RWLJN"
 
+[params]
+images = ["images/profile.webp"]
+profilePicture = "images/profile.webp"
+
   [[params.socialIcons]]
   icon = "fa-github"
   title = "GitHub"
