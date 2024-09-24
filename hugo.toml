@@ -29,3 +29,8 @@ profilePicture = "images/profile.webp"
   icon = "fa fa-envelope"
   title = "Email"
   url = "mailto:liu_yiyu@sjtu.edu.cn"
+
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'

@@ -3,7 +3,8 @@ title = 'Git 进阶用法：子模块'
 date = 2024-09-11T12:00:00-07:00
 draft = false
 tags = ["git", "git-zh-cn", "tutorial", "tutorial-zh-cn"]
-series = "Git 4/5"
+series = "git"
+seriesAnnotation = "4/5"
 showToc = true
 +++
 

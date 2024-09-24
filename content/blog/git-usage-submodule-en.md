@@ -3,7 +3,8 @@ title = 'Git Advanced Usage: Submodule'
 date = 2024-09-11T12:00:00-07:00
 draft = false
 tags = ["git", "git-en", "tutorial", "tutorial-en"]
-series = "Git 4/5"
+series = "git"
+seriesAnnotation = "4/5"
 showToc = true
 +++
 

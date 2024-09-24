@@ -3,7 +3,8 @@ title = 'Git 基礎知識 - Git 是如何設計的？'
 date = 2024-07-15T12:00:00-07:00
 draft = false
 tags = ["git", "git-zh-hk", "tutorial", "tutorial-zh-hk"]
-series = "Git 1/5"
+series = "git"
+seriesAnnotation = "1/5"
 showToc = true
 +++
 
