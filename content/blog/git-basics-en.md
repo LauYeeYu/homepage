@@ -3,7 +3,7 @@ title = 'Git Basics - How was Git Designed?'
 date = 2024-07-15T12:00:00-07:00
 draft = false
 tags = ["git", "git-en", "tutorial", "tutorial-en"]
-series = "git"
+series = "git-tutorial"
 seriesAnnotation = "1/5"
 showToc = true
 +++

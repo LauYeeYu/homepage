@@ -3,7 +3,7 @@ title = 'Git Basic Usage'
 date = 2024-08-05T12:00:00-07:00
 draft = false
 tags = ["git", "git-en", "tutorial", "tutorial-en"]
-series = "git"
+series = "git-tutorial"
 seriesAnnotation = "2/5"
 showToc = true
 +++
