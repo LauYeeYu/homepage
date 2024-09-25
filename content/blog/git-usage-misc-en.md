@@ -10,7 +10,7 @@ showToc = true
 
 In the [previous article](/blog/git-usage-submodule-en/), we've covered
 the usage of submodules. In this article, we'll introduce some other usage
-of Git that that you should know.
+of Git that you should know.
 
 <!--more-->
 
