@@ -297,13 +297,17 @@ If you use the rebase strategy, it is easier to resolve the conflicts,
 because the changes in every commit is finer-grained and has a clear
 intention (the changes are applied commit by commit).
 
-After resolving the conflicts, you should use the following command depending
-on your merge strategy:
+When a conflict occurs (including conflict in other operations, e.g.,
+stash, which will be introduce later), git will add the other file changes
+to the staging area and leave the conflicted file in the working directory.
+You should resolve the conflicts as soon as possible (it is not a good idea
+to skip resolving conflict and do other things first!) and then add the
+resolved files to the staging area. After that, you should use the following
+command depending on your merge strategy:
 
-- For merge strategy, add the resolved files (i.e., `git add <file>`) and
-  then create a new commit (i.e., `git commit`).
-- For rebase strategy, add the resolved files (i.e., `git add <file>`) and
-  then continue the rebase operation (i.e., `git rebase --continue`).
+- For merge strategy, create a new commit (i.e., `git commit`).
+- For rebase strategy, continue the rebase operation (i.e.,
+  `git rebase --continue`).
 
 There are some other tricks:
 
@@ -379,12 +383,17 @@ use the stash feature:
    git stash
    ```
 
-2. Retrieve the changes: (You may need to resolve the conflicts, use
-   `git status` to show more information)
+2. Retrieve the changes:
 
    ```bash
-    git stash pop
-    ```
+   git stash pop
+   ```
+
+   If you see a message indicating that a conflict occurs, you should
+   resolve the conflict as soon as possible and add the resolved files
+   to the staging area. In this case, git will not drop the stash
+   automatically as it does in the case without conflicts. Hence, you
+   ought to use `git stash drop` to drop the stash manually.
 
 3. List the stashed changes:
 
@@ -397,6 +406,12 @@ use the stash feature:
    ```bash
     git stash clear
     ```
+
+5. Drop the recent stashed change:
+
+   ```bash
+   git stash drop
+   ```
 
 ## Get the Common Ancestor
 
