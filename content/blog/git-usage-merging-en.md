@@ -267,6 +267,12 @@ Cons:
 > [!TIP]
 > As long as we need to merge, the conflicts will always be there.
 
+<!-- markdownlint-disable-line MD028 -->
+> [!CAUTION]
+> Once a conflict occurs, resolve it first before doing other things. If
+> you find difficulties in prioritising it, abort the operation. Otherwise,
+> you will make the situation messier and harder to resolve.
+
 When merging branches, Git will tell you if the automatic merge failed,
 and you have to resolve the conflicts manually.
 
@@ -300,8 +306,7 @@ intention (the changes are applied commit by commit).
 When a conflict occurs (including conflict in other operations, e.g.,
 stash, which will be introduce later), git will add the other file changes
 to the staging area and leave the conflicted file in the working directory.
-You should resolve the conflicts as soon as possible (it is not a good idea
-to skip resolving conflict and do other things first!) and then add the
+You should resolve the conflicts as soon as possible and then add the
 resolved files to the staging area. After that, you should use the following
 command depending on your merge strategy:
 
@@ -379,7 +384,7 @@ use the stash feature:
 
 1. Stash the changes:
 
-   ```bash
+   ```bash并干别的事情
    git stash
    ```
 
