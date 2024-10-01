@@ -19,6 +19,13 @@ Git was designed.
 a native speaker of these languages, it is recommended to read
 these versions.*
 
+## Introduction of Git Tutorial Series
+
+This is the first article in the Git tutorial series. In this series, we
+will introduce the most common and useful Git commands and concepts.
+With the knowledge in this series, you will understand Git well and be
+able to use Git easily.
+
 ## The Problem of Versioning
 
 Support you are now working for a company, and your leader asks you to

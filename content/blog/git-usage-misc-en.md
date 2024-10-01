@@ -387,6 +387,9 @@ directories, renaming a file, Git alias, and some useful third-party tools.
 This is the last article in the Git tutorial series. In the future, I may
 write some other articles that will dig deeper into Git. I hope you've
 learned something useful from this series and enjoy your time with Git.
+If you meet with some problems then, I recommend you to read the official Git
+documentation (you will find it easy to understand with the knowledge in
+this series).
 
 ## Copyright
 
