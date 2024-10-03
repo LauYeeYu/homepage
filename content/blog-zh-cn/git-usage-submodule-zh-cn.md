@@ -6,6 +6,7 @@ tags = ["git", "git-zh-cn", "tutorial", "tutorial-zh-cn"]
 series = "git-tutorial"
 seriesAnnotation = "4/5"
 showToc = true
+categories = ['software']
 +++
 
 在[上一篇文章](/blog-zh-cn/git-usage-merging-zh-cn)中，我们介绍了 Git

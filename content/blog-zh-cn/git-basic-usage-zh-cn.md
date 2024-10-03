@@ -6,6 +6,7 @@ tags = ["git", "git-zh-cn", "tutorial", "tutorial-zh-cn"]
 series = "git-tutorial"
 seriesAnnotation = "2/5"
 showToc = true
+categories = ['software']
 +++
 
 在[上一篇文章](/blog-zh-cn/git-basics-zh-cn/)中，我们讨论了版本控制系统的通用概念和

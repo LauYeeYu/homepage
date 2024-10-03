@@ -6,6 +6,7 @@ tags = ["git", "git-zh-hk", "tutorial", "tutorial-zh-hk"]
 series = "git-tutorial"
 seriesAnnotation = "1/5"
 showToc = true
+categories = ['software']
 +++
 
 本文中，我們將探討版本控制系統，並介紹 Git 的設計。

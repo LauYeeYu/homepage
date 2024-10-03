@@ -6,6 +6,7 @@ tags = ["git", "git-zh-hk", "tutorial", "tutorial-zh-hk"]
 series = "git-tutorial"
 seriesAnnotation = "4/5"
 showToc = true
+categories = ['software']
 +++
 
 在[上一篇文章](/blog-zh-hk/git-usage-merging-zh-hk)中，我們介紹了

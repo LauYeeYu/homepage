@@ -3,6 +3,7 @@ title = 'Improve UI/UX under Hugo'
 date = 2024-05-19T21:49:51+08:00
 draft = false
 tags = ['hugo', 'web', 'UI', 'UX']
+categories = ['web-development']
 +++
 
 In the last blog post, I shared how I set up my personal site with Hugo and

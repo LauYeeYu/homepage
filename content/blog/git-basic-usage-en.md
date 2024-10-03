@@ -6,6 +6,7 @@ tags = ["git", "git-en", "tutorial", "tutorial-en"]
 series = "git-tutorial"
 seriesAnnotation = "2/5"
 showToc = true
+categories = ['software']
 +++
 
 In the [previous article](/blog/git-basics-en/), we have discussed about the

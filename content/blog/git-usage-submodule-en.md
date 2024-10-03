@@ -6,6 +6,7 @@ tags = ["git", "git-en", "tutorial", "tutorial-en"]
 series = "git-tutorial"
 seriesAnnotation = "4/5"
 showToc = true
+categories = ['software']
 +++
 
 In the [previous article](/blog/git-usage-merging-en), we've introduced the

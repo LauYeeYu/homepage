@@ -6,6 +6,7 @@ tags = ["git", "git-en", "tutorial", "tutorial-en"]
 series = "git-tutorial"
 seriesAnnotation = "5/5"
 showToc = true
+categories = ['software']
 +++
 
 In the [previous article](/blog/git-usage-submodule-en/), we've covered

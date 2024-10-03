@@ -6,6 +6,7 @@ tags = ["git", "git-en", "tutorial", "tutorial-en"]
 series = "git-tutorial"
 seriesAnnotation = "1/5"
 showToc = true
+categories = ['software']
 +++
 
 In this article, we will discuss about the version control system and how
