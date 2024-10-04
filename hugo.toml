@@ -5,6 +5,7 @@ title = 'Yiyu Liu (刘祎禹)'
 theme = "soho"
 copyright = "Yiyu Liu"
 googleAnalytics = "G-8RHH1RWLJN"
+hasCJKLanguage = true
 
 [params]
 images = ["images/profile.webp"]
