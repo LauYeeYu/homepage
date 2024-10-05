@@ -1,7 +1,7 @@
 ## Biography
 
 I am Yiyu Liu, an undergraduate at
-[ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity(SJTU)][sjtu].
+[ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity (SJTU)][sjtu].
 Currently, I am fortunate to work with Prof. [Baris Kasikci][baris] as a
 research intern in the Paul G. Allen School of Computer Science & Engineering
 at the University of Washington from July to December, 2024. Before that,
