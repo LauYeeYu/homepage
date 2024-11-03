@@ -1,5 +1,6 @@
 +++
 title = 'Yiyu Liu'
+showRainbowSlogan = true
 +++
 
 ## Biography

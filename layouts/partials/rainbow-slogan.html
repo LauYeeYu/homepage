@@ -1,0 +1,6 @@
+{{ $rainbowPic := resources.Get "images/rainbow-circle.svg" }}
+{{ $rainbowPicRel := $rainbowPic.RelPermalink }}
+<div class="rainbow-slogan rainbow-slogan-text"><p><a class="plain-link rainbow-text" href="/slogan/we-research-as-one">#WeResearchAsOne</a></p></div>
+<div class="rainbow-slogan rainbow-slogan-icon">
+  <img class="rainbow-icon" src="{{ $rainbowPicRel }}" alt="Rainbow Circle" class="rainbow-circle">
+</div>
