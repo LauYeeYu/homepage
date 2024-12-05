@@ -20,10 +20,15 @@ graduate in June 2025.
 [epcc]: http://epcc.sjtu.edu.cn/
 [baris]: https://homes.cs.washington.edu/~baris/
 
-I am interested in cloud computing, high performance computing, operating system,
-and hardware/software co-design.
+I am interested in cloud computing, efficient machine learning systems,
+operating system, and hardware/software co-design.
 
 I'm looking for a PhD position for Fall 2025 PhD programs.
+
+For more details about my research experience and other information, please
+view my [CV][cv].
+
+[cv]: /CV.pdf
 
 ## Publications
 
@@ -41,3 +46,5 @@ Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
 [asplos24]: https://www.asplos-conference.org/asplos2024/
 [faasmem-paper]: https://doi.org/10.1145/3620666.3651355
 [faasmem-code]: https://github.com/BarrinXu/FaaSMem
+
+*: Corresponding author.
