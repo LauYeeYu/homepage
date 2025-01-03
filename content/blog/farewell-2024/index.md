@@ -116,7 +116,7 @@ The fireworks on the Fourth of July was also unforgettable to me. People
 celebrated the Independence Day with fireworks so that liberty rooted deeply
 in everyone's heart. When the fireworks were launched to the sky over Seattle,
 everyone was cheering. What a beautiful scene with flowers of fire blossoming
-over the land of free and the home of brave!
+over the land of the free and the home of the brave!
 
 ![The fireworks on the Fourth of July](fourth-of-july-2024.webp)
 
