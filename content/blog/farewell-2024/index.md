@@ -1,6 +1,7 @@
 +++
 title = 'Farewell, 2024!'
 date = 2024-12-31T22:00:00+08:00
+modified = 2025-01-16T22:00:00+08:00
 draft = false
 categories = ['personal']
 tags = ['farewell', '2024']
@@ -165,6 +166,29 @@ I can clearly remember when I was stranded in the snow, my labmates came to
 rescue me and help me to re-wear the ski. Here, I extend my gratitude to them.
 
 ![The scene from Summit at Snoqualmie](ski.webp)
+
+### Dark Clouds
+
+Besides the good things during my internship at UW, there were also some
+dark clouds. It is not a secret that there are cases of sexual harassment.
+I was shocked when I heard that there existed such cases in the lab. Our
+lab activities, including the lab lunch, were ceased. The number of people
+presented in the lab reduced significantly, which makes it difficult to
+learn more about others' work through daily chats. Several learning lunches
+regarding the problem was organised. From these lunches, I improved
+my understanding of treating people with respect and learned about the
+culture difference. Despite the efforts done by everyone in the lab,
+the final report of this incident was not released until the end of the
+year. I hope this problem can be properly resolved and provide a safe
+place for everyone in the lab.
+
+Apart from that, I also realised that there are also a lot of problem in
+academia. Bullying and discrimination are not rare. Unfair treatment,
+usually based on uneven relationship with conflict of interest, is also
+common yet hard to be addressed. These problems are partly because the
+punishment is too severe, and do not have range of punishments according
+to the severity of the problem. I hope the academia can be a better place
+for everyone.
 
 ## Conclusion
 
