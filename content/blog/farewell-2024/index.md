@@ -184,8 +184,8 @@ place for everyone in the lab.
 
 Apart from that, I also realised that there are also a lot of problem in
 academia. Bullying and discrimination are not rare. Unfair treatment,
-usually based on uneven relationship with conflict of interest, is also
-common yet hard to be addressed. These problems are partly because the
+usually based on inequality in relationships with conflict of interest, is
+also common yet hard to be addressed. These problems are partly because the
 punishment is too severe, and do not have range of punishments according
 to the severity of the problem. I hope the academia can be a better place
 for everyone.
