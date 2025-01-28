@@ -43,6 +43,12 @@ can lead to unfair treatment to other people. To make things worse, if the
 relationship is ambiguous, it is really hard to tell whether it is a real
 romantic relationship or not.
 
+One of the reasons why these problems are still happening is the lack of
+actual punishment. The
+[Appendix A](#appendix-a-----obstacles-in-enforcing-punishment) lists the
+obstacles in actually enforcing punishment that I thought of. If the
+punishment is not served, the offender will still do the same thing again.
+
 In my opinion, all people in academia, since they are all qualified to
 be in academia, have the capability to work as a good researcher.
 Therefore, they should not be blamed because they fail to meet the
@@ -67,3 +73,44 @@ collaboratively without discrimination and inequality, we can push
 the boundary of human knowledge further and make greater achievements
 for all people. Every researcher should join hands and support every single
 person in academia to create a better world for all human beings!
+
+-----
+
+## Appendix A --- Obstacles in Enforcing Punishment
+
+The enforcement of punishment is the most important part in eliminating
+or reducing the occurrence of unprofessional behaviour. Without punishment,
+the policy is just a piece of paper. However, various obstacles exist
+in enforcing punishment.
+
+1. **Excessive protection on students (offenders).**
+   Students are normally considered as the group that can be easily
+   corrected. Therefore, the department might probably give a chance
+   to the students and only warn them. This makes sense, but some
+   students might regard their misconduct as minor and continue to
+   do the same thing again.
+2. **The reputation of universities and departments.**
+   Universities and departments care about their reputation a lot. To
+   avoid the negative impact on their reputation, they might try to
+   cover up the case, or give a light punishment to the offender.
+3. **Too severe punishment.**
+   Admittedly, severe punishment will prevent people from doing these
+   misconducts. However, if the punishment is too severe, it might
+   backfire. The department might be afraid of ruining the offender's
+   career, and choose not to enforce the punishment.
+   **If the punishment can have a wider range**, according to
+   the severity of the problem, these problems might be resolved. On
+   the other hand, with the wider range of punishment, the punishment
+   can be more reasonable and fair.
+4. **The lack of evidence.**
+   In some cases, the evidence is not enough to prove the misconduct.
+   This makes it hard to enforce the punishment. To make things worse,
+   some problem that is marginal is difficult to judge. For example,
+   the ambiguous romantic relationship is hard to tell whether it
+   breaches the policy or not.
+5. **Relationship with the offender.**
+   People might choose not to report the case because they
+   are afraid of ruining the offender's relationship, or even worse,
+   ruining their own career. This is particularly true when the
+   offender is a close friend, or a person who has a great influence
+   on the department.
