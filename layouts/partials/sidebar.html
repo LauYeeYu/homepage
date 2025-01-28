@@ -32,17 +32,17 @@
 
     <div><nav>
       <ul class="sidebar-nav">
-        <li>
+        <li style="text-align: center;">
           <a href="{{ .Site.BaseURL }}">Home</a>
         </li>
-        <li>
+        <li style="text-align: center;">
           <a href="{{ .Site.BaseURL }}CV.pdf">CV</a>
         </li>
-        <li>
+        <li style="text-align: center;">
           <a href="{{ .Site.BaseURL }}blog">Blog</a>
         </li>
         {{ range .Site.Menus.main -}}
-        <li>
+        <li style="text-align: center;">
           <a href="{{ .URL }}">{{ .Name }}</a>
         </li>
         {{- end }}
