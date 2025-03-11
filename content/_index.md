@@ -7,7 +7,7 @@ showRainbowSlogan = true
 
 I am Yiyu Liu, an undergraduate at
 [ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity (SJTU)][sjtu].
-Currently, I am fortunate to work with Prof. [Baris Kasikci][baris] as a
+I was fortunate to work with Prof. [Baris Kasikci][baris] as a
 research intern in the Paul G. Allen School of Computer Science & Engineering
 at the University of Washington from July to December, 2024. Before that,
 I worked with Prof. [Quan Chen][quan-chen] from September, 2023 to June, 2024,
