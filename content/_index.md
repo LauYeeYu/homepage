@@ -12,18 +12,19 @@ research intern in the Paul G. Allen School of Computer Science & Engineering
 at the University of Washington from July to December, 2024. Before that,
 I worked with Prof. [Quan Chen][quan-chen] from September, 2023 to June, 2024,
 at [Emerging Parallel Computing Center (EPCC)][epcc]. I am expected to
-graduate in June 2025.
+graduate in June 2025 and will join the PhD program in Computer Science at
+[the Harvard John A. Paulson School of Engineering and Applied Sciences (SEAS)][harvard-seas]
+in Fall 2025.
 
 [acm-class]: https://acm.sjtu.edu.cn/
 [sjtu]: https://sjtu.edu.cn/
 [quan-chen]: https://www.cs.sjtu.edu.cn/~chen-quan/index_EN.html/
 [epcc]: http://epcc.sjtu.edu.cn/
 [baris]: https://homes.cs.washington.edu/~baris/
+[harvard-seas]: https://www.seas.harvard.edu/
 
 I am interested in cloud computing, efficient machine learning systems,
 operating system, and hardware/software co-design.
-
-I'm looking for a PhD position for Fall 2025 PhD programs.
 
 For more details about my research experience and other information, please
 view my [CV][cv].
