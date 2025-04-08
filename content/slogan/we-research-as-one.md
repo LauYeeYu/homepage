@@ -15,6 +15,16 @@ in research.
 
 <!--more-->
 
+*P.S.: I came across this slogan when I heard about the sexual
+harassment incidents at the University of Washington. I feel disappointed
+and angry about the things that happened.*
+
+<!-- [^1]: [Final report](https://drive.google.com/file/d/16Jvh--LRsKipZYo9vFdqTLIjl6M5Iof9/view),
+  Attachment [A](https://drive.google.com/file/d/1mkltXxAr0DkKghlRwyNu5Phm5B8ffRFc/view),
+  [B](https://drive.google.com/file/d/1iVI82ALs0PwdtDuF67dEpwgXKJg-tYuu/view),
+  [C](https://drive.google.com/file/d/1rksfcbVt2ANSNMpV_HkHIpnqrjMMJvnu/view),
+  [D](https://drive.google.com/file/d/1ALdJQp6xswby-UeMcb8uZxVqMYyeo3Cv/view). -->
+
 In academia, there are still a lot of problems happening nowadays.
 There are discrimination, harassment, and bullying --- that's why
 I'm calling on every researcher to "research as one".
