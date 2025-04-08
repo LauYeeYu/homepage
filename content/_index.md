@@ -38,7 +38,7 @@ view my [CV][cv].
 
 ### FaaSMem: Improving Memory Efficiency of Serverless Computing with Memory Pool Architecture
 
-Chuhao Xu, **Yiyu Liu**, Zijun Li, Quan Chen*, Han Zhao, Deze Zeng,
+Chuhao Xu, **Yiyu Liu**, Zijun Li, Quan Chen, Han Zhao, Deze Zeng,
 Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
 
 [ASPLOS 24][asplos24] / [Paper][faasmem-paper] / [Code][faasmem-code]
@@ -47,4 +47,13 @@ Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
 [faasmem-paper]: https://doi.org/10.1145/3620666.3651355
 [faasmem-code]: https://github.com/BarrinXu/FaaSMem
 
-*: Corresponding author.
+### TeleRAG: Efficient Retrieval-Augmented Generation Inference with Lookahead Retrieval
+
+Chien-Yu Lin, Keisuke Kamahori, **Yiyu Liu**, Xiaoxiang Shi, Madhav Kashyap,
+Yile Gu, Rulin Shao, Zihao Ye, Kan Zhu, Stephanie Wang, Arvind Krishnamurthy,
+Rohan Kadekodi, Luis Ceze, Baris Kasikci
+
+[ArXiv][arxiv] / [Paper][telerag-paper]
+
+[arxiv]: https://arxiv.org/abs/2401.01495
+[telerag-paper]: https://arxiv.org/abs/2401.01495
