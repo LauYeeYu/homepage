@@ -56,5 +56,5 @@ Rohan Kadekodi, Luis Ceze, Baris Kasikci
 
 [ArXiv][arxiv] / [Paper][telerag-paper]
 
-[arxiv]: https://arxiv.org/abs/2401.01495
-[telerag-paper]: https://arxiv.org/abs/2401.01495
+[arxiv]: https://arxiv.org/abs/2502.20969
+[telerag-paper]: https://arxiv.org/pdf/2502.20969
