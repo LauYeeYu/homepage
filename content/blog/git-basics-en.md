@@ -475,7 +475,7 @@ The following table includes the core concepts in Git that should bear in
 mind. You may check the table whenever you forget the concepts.
 
 | Concept | Description |
-|:---:| --- |
+| --- | --- |
 | Commit | A snapshot of the code. |
 | Ref | A reference to a commit. |
 | Branch | A reference to a commit. |
