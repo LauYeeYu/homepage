@@ -317,7 +317,7 @@ Git Delta can be applied to `diff`, `blame`, `grep` and `show` commands.
 
 There are some tools that can help you search in the Git repository, instead
 of using `git grep`. The [ripgrep (rg)][ripgrep] and
-[the silver searcher(ag)][ag] are two of them.
+[the silver searcher (ag)][ag] are two of them.
 
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [ag]: https://github.com/ggreer/the_silver_searcher

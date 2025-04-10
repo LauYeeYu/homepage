@@ -254,7 +254,7 @@ Git Delta 可以应用于 `diff`、`blame`、`grep` 和 `show` 等命令。
 
 ### Git 仓库内搜索工具
 
-`git grep` 的输出不是很方便，因为它只显示文件名和匹配行。如果你想要更好的搜索工具，你可以使用 [ripgrep (rg)][ripgrep] 和 [the silver searcher(ag)][ag]。
+`git grep` 的输出不是很方便，因为它只显示文件名和匹配行。如果你想要更好的搜索工具，你可以使用 [ripgrep (rg)][ripgrep] 和 [the silver searcher (ag)][ag]。
 
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [ag]: https://github.com/ggreer/the_silver_searcher
