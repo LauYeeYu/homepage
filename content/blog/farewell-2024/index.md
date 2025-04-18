@@ -1,7 +1,7 @@
 +++
 title = 'Farewell, 2024!'
 date = 2024-12-31T22:00:00+08:00
-modified = 2025-01-16T22:00:00+08:00
+lastmod = 2025-01-16T22:00:00+08:00
 draft = false
 categories = ['personal']
 tags = ['farewell', '2024']

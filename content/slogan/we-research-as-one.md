@@ -1,7 +1,7 @@
 +++
 title = '#WeResearchAsOne'
 date = 2024-11-02T19:00:00-07:00
-modified = 2024-12-06T19:00:00-07:00
+lastmod = 2024-04-09T20:00:00+08:00
 draft = false
 showRainbowSlogan = true
 +++
