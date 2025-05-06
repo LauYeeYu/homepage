@@ -1,6 +1,5 @@
 +++
 title = 'Yiyu Liu'
-showRainbowSlogan = true
 lastmod = 2025-04-09T20:00:00+08:00
 +++
 
