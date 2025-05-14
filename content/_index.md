@@ -47,14 +47,3 @@ Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
 [asplos24]: https://www.asplos-conference.org/asplos2024/
 [faasmem-paper]: https://doi.org/10.1145/3620666.3651355
 [faasmem-code]: https://github.com/BarrinXu/FaaSMem
-
-### TeleRAG: Efficient Retrieval-Augmented Generation Inference with Lookahead Retrieval
-
-Chien-Yu Lin, Keisuke Kamahori, **Yiyu Liu**, Xiaoxiang Shi, Madhav Kashyap,
-Yile Gu, Rulin Shao, Zihao Ye, Kan Zhu, Stephanie Wang, Arvind Krishnamurthy,
-Rohan Kadekodi, Luis Ceze, Baris Kasikci
-
-[ArXiv][arxiv] / [Paper][telerag-paper]
-
-[arxiv]: https://arxiv.org/abs/2502.20969
-[telerag-paper]: https://arxiv.org/pdf/2502.20969
