@@ -5,16 +5,17 @@ lastmod = 2025-04-09T20:00:00+08:00
 
 ## Biography
 
-I am Yiyu Liu, an undergraduate at
-[ACM Honor Class][acm-class], [Shanghai Jiao Tong Unversity (SJTU)][sjtu].
-I was fortunate to work with Prof. [Baris Kasikci][baris] as a
-research intern in the Paul G. Allen School of Computer Science & Engineering
-at the University of Washington from July to December, 2024. Before that,
-I worked with Prof. [Quan Chen][quan-chen] from September, 2023 to June, 2024,
-at [Emerging Parallel Computing Center (EPCC)][epcc]. I am expected to
-graduate in June 2025 and will join the PhD program in Computer Science at
+I am Yiyu Liu, an incoming PhD student in Computer Science at
 [the Harvard John A. Paulson School of Engineering and Applied Sciences (SEAS)][harvard-seas]
 in Fall 2025.
+
+Previously, I obtained my bachelor's degree in Computer Science from
+[ACM Honor Class][acm-class], [Shanghai Jiao Tong University (SJTU)][sjtu], in June 2025.
+During my undergraduate years, I worked with Prof. [Baris Kasikci][baris] as a
+research intern in the Paul G. Allen School of Computer Science & Engineering
+at the University of Washington from July to December 2024.
+Before that, I worked with Prof. [Quan Chen][quan-chen] from September 2023 to June 2024,
+at [Emerging Parallel Computing Center (EPCC)][epcc].
 
 [acm-class]: https://acm.sjtu.edu.cn/
 [sjtu]: https://sjtu.edu.cn/
