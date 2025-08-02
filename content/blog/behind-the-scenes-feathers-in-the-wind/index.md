@@ -1,6 +1,7 @@
 +++
 title = 'Behind the Scenes: Undergraduate Graduation Music Video, Feathers in the Wind'
 date = 2025-06-06T15:00:00+08:00
+lastmod = 2025-08-02T21:00:00+08:00
 draft = false
 tag = ['music-video', 'graduation']
 categories = ['art']
@@ -9,7 +10,7 @@ categories = ['art']
 In mid to late February, I was invited to take charge of the music video
 project for my college. After several months's working, including planning,
 filming, and post-production, we finally completed this [graduation MV][mv-link] just in
-time for the graduating ceremony on 24 June, 2024. Here, I'd like to share
+time for the graduating ceremony on 24 June, 2025. Here, I'd like to share
 some behind-the-scenes stories and express my heartfelt thanks to everyone
 who contributed to this project.
 
@@ -24,8 +25,8 @@ to other languages unfortunately. Translating the lyrics to other languages
 is extremely difficult to keep the original meaning and rhyme, so no plan
 of translating the lyrics will be made.
 
-If you are familiar with Chinese, you should read the chinese version of this post
-[here][simplified-chinese-version].
+If you are familiar with Chinese, you should read the
+[Chinese version of this post][simplified-chinese-version].
 
 [simplified-chinese-version]: /blog-zh-cn/behind-the-scenes-feathers-in-the-wind/
 
