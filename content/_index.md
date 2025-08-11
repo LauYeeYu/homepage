@@ -24,8 +24,7 @@ at [Emerging Parallel Computing Center (EPCC)][epcc].
 [baris]: https://homes.cs.washington.edu/~baris/
 [harvard-seas]: https://www.seas.harvard.edu/
 
-I am interested in cloud computing, efficient machine learning systems,
-operating system, and hardware/software co-design.
+I am interested in cloud computing and operating systems.
 
 For more details about my research experience and other information, please
 view my [CV][cv].
