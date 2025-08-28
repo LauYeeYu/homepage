@@ -6,8 +6,11 @@ draft = false
 
 ## Contact
 
-If you would like to contact me, please send an email to
-[yiyuliu@g.harvard.edu](mailto:yiyuliu@g.harvard.edu).
+Harvard Science & Engineering Complex (SEC) Room 4.431  
+150 Western Ave  
+Boston, MA 02134
+
+Email: [yiyuliu@g.harvard.edu](mailto:yiyuliu@g.harvard.edu).
 
 Previously, I also used the following email addresses:
 
