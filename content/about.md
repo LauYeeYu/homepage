@@ -2,6 +2,7 @@
 title = 'About'
 date = 2025-08-02T22:00:00+08:00
 draft = false
+showVeritasBanner = true
 +++
 
 ## Contact

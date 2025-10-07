@@ -1,6 +1,7 @@
 +++
 title = 'Yiyu Liu'
 lastmod = 2025-08-27T20:00:00-04:00
+showVeritasBanner = true
 +++
 
 ## Biography

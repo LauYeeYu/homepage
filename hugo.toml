@@ -10,7 +10,6 @@ hasCJKLanguage = true
 [params]
 images = ["images/profile.webp"]
 profilePicture = "images/profile.webp"
-showVeritasBanner = true
 
   [[params.socialIcons]]
   icon = "fa-github"
