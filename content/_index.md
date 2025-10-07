@@ -1,6 +1,6 @@
 +++
 title = 'Yiyu Liu'
-lastmod = 2025-08-27T20:00:00-04:00
+lastmod = 2025-10-07T10:00:00-04:00
 showVeritasBanner = true
 +++
 
@@ -8,7 +8,11 @@ showVeritasBanner = true
 
 I am Yiyu Liu, a PhD student in Computer Science at
 [the Harvard John A. Paulson School of Engineering and Applied Sciences (SEAS)][harvard-seas]
-starting from Fall 2025.
+starting from Fall 2025, advised by Prof. [Juncheng Yang][juncheng-yang] and
+Prof. [Minlan Yu][minlan-yu].
+
+[juncheng-yang]: https://junchengyang.com/
+[minlan-yu]: https://minlanyu.seas.harvard.edu/
 
 Previously, I obtained my bachelor's degree in Computer Science from
 [ACM Honor Class][acm-class], [Shanghai Jiao Tong University (SJTU)][sjtu], in June 2025.
