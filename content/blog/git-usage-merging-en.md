@@ -1,6 +1,7 @@
 +++
 title = 'Git Advanced Usage: Merging'
 date = 2024-08-28T12:00:00-07:00
+lastmod = 2025-10-07T10:00:00-04:00
 draft = false
 tags = ["git", "git-en", "tutorial", "tutorial-en"]
 series = "git-tutorial"
@@ -319,8 +320,8 @@ There are some other tricks:
 
 - Abort: `git merge --abort`, `git rebase --skip`, `git rebase --abort`
   (depending on the strategy you are using).
-- Follow others: `git merge -s theirs ...`.
-- Insist on your own: `git merge -s ours ...`.
+- Follow others: `git merge -X theirs ...`.
+- Insist on your own: `git merge -X ours ...`.
 
 ### Example of Common Workflow
 

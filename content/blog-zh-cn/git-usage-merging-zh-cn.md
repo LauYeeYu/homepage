@@ -1,6 +1,7 @@
 +++
 title = 'Git 进阶用法：合并分支'
 date = 2024-08-28T12:00:00-07:00
+lastmod = 2025-10-07T10:00:00-04:00
 draft = false
 tags = ["git", "git-zh-cn", "tutorial", "tutorial-zh-cn"]
 series = "git-tutorial"
@@ -228,8 +229,8 @@ git rebase <commit>
 还有一些其他「小技巧」：
 
 - 「走为上计」：`git merge --abort`、`git rebase --skip`、`git rebase --abort`（取决于你使用的策略）。
-- 「言听计从」：`git merge -s theirs ...`。
-- 「固执己见」：`git merge -s ours ...`。
+- 「言听计从」：`git merge -X theirs ...`。
+- 「固执己见」：`git merge -X ours ...`。
 
 ### 常见工作流程示例
 
