@@ -47,8 +47,19 @@ view my [CV][cv].
 Chuhao Xu, **Yiyu Liu**, Zijun Li, Quan Chen, Han Zhao, Deze Zeng,
 Qian Peng, Xueqi Wu, Haifeng Zhao, Senbo Fu, Minyi Guo.
 
-[ASPLOS 24][asplos24] / [Paper][faasmem-paper] / [Code][faasmem-code]
+[ASPLOS &rsquo;24][asplos24] / [Paper][faasmem-paper] / [Code][faasmem-code]
 
 [asplos24]: https://www.asplos-conference.org/asplos2024/
 [faasmem-paper]: https://doi.org/10.1145/3620666.3651355
 [faasmem-code]: https://github.com/BarrinXu/FaaSMem
+
+### TeleRAG: Efficient Retrieval-Augmented Generation Inference with Lookahead Retrieval
+
+Chien-Yu Lin, Keisuke Kamahori, **Yiyu Liu**, Xiaoxiang Shi, Madhav Kashyap, Yile Gu, Rulin Shao, Zihao Ye, Kan Zhu, Rohan Kadekodi, Stephanie Wang, Arvind Krishnamurthy, Luis Ceze, Baris Kasikci.
+
+[MLSys &rsquo;26][mlsys26] / [Paper][telerrag-paper] / [Code][telerrag-code]
+
+[mlsys26]: https://mlsys.org/Conferences/2026
+[telerrag-paper]: https://openreview.net/forum?id=YsOyCpMUYD
+[telerrag-code]: https://github.com/uw-syfi/TeleRAG
+
